@@ -1,0 +1,44 @@
+/*
+Palette de couleur du site :
+Gris sombre         #222831
+Gris moins sombre   #393e46
+Bleu                #00adb5
+Gris clair          #eeeeee
+rouge               #e23e57
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+nav {
+    background-color: #393e46;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    width: 250px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul li {
+    color: white;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+}
