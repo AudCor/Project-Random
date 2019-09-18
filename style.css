@@ -16,6 +16,7 @@ rouge               #e23e57
 
 body {
     background-color: #eeeeee;
+    overflow: hidden;
 }
 
 nav {
@@ -39,7 +40,12 @@ nav ul li button {
     height: 30px;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#profile-button {
+    display: none;
 }
 
 #logo {
@@ -48,8 +54,27 @@ nav ul li button {
     margin-left: 20px;
 }
 
+/*------ Sliders ----------*/
 
-/*       Main site        */
+#log-slider {
+    background-color: #00adb5;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    height: 92.7vh;
+    width: 33vw;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in;
+}
+
+.slider-active {
+    visibility: visible;
+    transform: translateX(0%);
+    
+
+}
+
+/*------ Main site --------*/
 
 
 #spin-div {
@@ -59,5 +84,41 @@ nav ul li button {
     padding: 0;
     margin-left: 100px;
     margin-top: 100px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+
+#spin-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #393e46;
+    width: 350px;
+    height: 200px;
+    margin-left: 100px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#turn-button, #reset-button {
+    width: 250px;
+    height: 50px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+#turn-button {
+    background-color: #00adb5;
+    color: white;
+    font-size: 1.5em;
+}
+
+#reset-button {
+    background-color: #e23e57;
+    color: white;
+    font-size: 1.5em;
 }
