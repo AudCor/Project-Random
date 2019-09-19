@@ -44,7 +44,7 @@ nav ul li button {
     cursor: pointer;
 }
 
-#profile-button {
+.profile-button {
     display: none;
 }
 
