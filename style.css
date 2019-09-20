@@ -59,7 +59,6 @@ nav ul li button {
 .log-slider, .sign-slider, .profile-slider {
     background-color: #00adb5;
     position: absolute;
-    visibility: hidden;
     right: 0px;
     top: 60px;
     height: 92.7vh;
@@ -69,9 +68,12 @@ nav ul li button {
 }
 
 .slider-active {
-    visibility: visible;
     transform: translateX(0%);
+}
+
+.slider-closing {
     transition: transform 0.4s ease-out;
+    transform: translateX(100%);
 }
 
 /*------ Main site --------*/
