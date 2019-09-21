@@ -43,9 +43,9 @@ nav ul li button {
     border-radius: 5px;
     cursor: pointer;
 }
-
+/* Bouton de profil temporairement apparent, le temps de faire des réglages */
 .profile-button {
-    display: none;
+    display: block;
 }
 
 #logo {
@@ -56,8 +56,28 @@ nav ul li button {
 
 /*------ Sliders ----------*/
 
-.log-slider, .sign-slider, .profile-slider {
+.log-slider {
     background-color: #00adb5;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    height: 92.7vh;
+    width: 33vw;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in;
+}
+ .sign-slider {
+    background-color: #e23e57;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    height: 92.7vh;
+    width: 33vw;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in;
+}
+ .profile-slider {
+    background-color: #393e46;
     position: absolute;
     right: 0px;
     top: 60px;
