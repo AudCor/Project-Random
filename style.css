@@ -144,3 +144,31 @@ nav ul li button {
     color: white;
     font-size: 1.5em;
 }
+/* pour le formulaire */
+
+#divForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 150px;
+}
+#divForm input, textarea, select {
+    border: #333 solid 1px;
+    font-size: 20px; 
+    margin-bottom: 15px;
+    width: 80%;
+}
+#divSend {
+    width: 80%;
+    text-align: right;
+}
+#divSend button {
+    background-color: grey;
+    color: black;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+    font-size: 10px;
+    box-shadow: #222831;
+}
