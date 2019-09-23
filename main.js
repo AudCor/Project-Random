@@ -20,4 +20,4 @@ function profileButton() {
     profileSlider.classList.toggle('slider-active');
     profileSlider.classList.toggle('slider-closing');
     bgDark.classList.toggle('dark-bg-active')
-} 
+}
