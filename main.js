@@ -1,7 +1,17 @@
 const signSlider = document.querySelector('.sign-slider');
 const logSlider = document.querySelector('.log-slider');
 const profileSlider = document.querySelector('.profile-slider');
+const bgDark = document.querySelector('.dark-bg');
 console.log(signSlider);
+const bgDarkActivation = () => {
+  if (signSlider.classList.contains('slider-closing') && logSlider.classList.contains('slider-closing') && profileSlider.classList.contains('slider-closing'))
+    {
+      bgDark.classList.remove('dark-bg-active');
+    } else
+    {
+      bgDark.classList.add('dark-bg-active');
+    }
+}
 
 function signButton() {
   if (logSlider.classList.contains('slider-active'))
@@ -18,7 +28,8 @@ function signButton() {
   } else
   {
     signSlider.classList.toggle('slider-active');
-    signSlider.classList.toggle('slider-closing');
+    signSlider.classList.toggle('slider-closing'); 
+    bgDarkActivation();
   }
 }
 
@@ -37,6 +48,7 @@ function loginButton() {
   {
     logSlider.classList.toggle('slider-active');
     logSlider.classList.toggle('slider-closing');  
+    bgDarkActivation();
   }
 }
 
@@ -56,18 +68,6 @@ function profileButton() {
   { 
   profileSlider.classList.toggle('slider-active');
   profileSlider.classList.toggle('slider-closing');
+  bgDarkActivation();
   } 
 }
-
-// function chooseResult() {
-//     const nameDiv = document.querySelectorAll('.all-divs');
-//     let addingTime = 0;
-//     switch () {
-//         case nameDiv[0]:
-            
-//             break;
-    
-//         default:
-//             break;
-//     }
-// }
