@@ -36,6 +36,7 @@ nav ul {
 
 nav ul li button {
     background-color: #00adb5;
+    z-index: 100;
     width: 70px;
     height: 30px;
     color: white;
@@ -49,8 +50,7 @@ nav ul li button {
 }
 
 #logo {
-    width: 150px;
-    height: 150px;
+    font-size: 36px;
     margin-left: 20px;
 }
 
@@ -58,6 +58,7 @@ nav ul li button {
 
 .log-slider, .sign-slider, .profile-slider {
     background-color: #00adb5;
+    z-index: 100;
     position: absolute;
     right: 0px;
     top: 60px;
@@ -74,6 +75,20 @@ nav ul li button {
 .slider-closing {
     transition: transform 0.4s ease-out;
     transform: translateX(100%);
+}
+
+.dark-bg {
+    display: none;
+    z-index: 9;
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+    height: 100vh;
+    width: 100vw;
+}
+
+.dark-bg-active {
+    display: block;
 }
 
 /*------ Main site --------*/
