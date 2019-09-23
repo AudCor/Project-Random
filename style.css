@@ -44,9 +44,9 @@ nav ul li button {
     border-radius: 5px;
     cursor: pointer;
 }
-
+/* Bouton de profil temporairement apparent, le temps de faire des réglages */
 .profile-button {
-    display: none;
+    display: block;
 }
 
 #logo {
@@ -56,9 +56,29 @@ nav ul li button {
 
 /*------ Sliders ----------*/
 
-.log-slider, .sign-slider, .profile-slider {
+.log-slider {
     background-color: #00adb5;
     z-index: 100;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    height: 92.7vh;
+    width: 33vw;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in;
+}
+ .sign-slider {
+    background-color: #e23e57;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    height: 92.7vh;
+    width: 33vw;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in;
+}
+ .profile-slider {
+    background-color: #393e46;
     position: absolute;
     right: 0px;
     top: 60px;
@@ -138,4 +158,32 @@ nav ul li button {
     background-color: #e23e57;
     color: white;
     font-size: 1.5em;
+}
+/* pour le formulaire */
+
+#divForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 150px;
+}
+#divForm input, textarea, select {
+    border: #333 solid 1px;
+    font-size: 20px; 
+    margin-bottom: 15px;
+    width: 80%;
+}
+#divSend {
+    width: 80%;
+    text-align: right;
+}
+#divSend button {
+    background-color: grey;
+    color: black;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+    font-size: 10px;
+    box-shadow: #222831;
 }
