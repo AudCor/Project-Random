@@ -4,6 +4,8 @@
 var time = 4000;
 var scrollDistancePerSecond = 1000; // Scroll 50px every second.
 var animation = null;
+var doNotTurn = false;
+var internal = null;
 //Roue tourne automatiquement
 function autoScroll(){
     var element = document.getElementById('contentwrapper');
@@ -18,23 +20,32 @@ function autoScroll(){
 const btn = document.getElementById("turn-button");
 var contient = document.getElementById("spin-div");
 
-function demarrageRoue2() {
+ function demarrageRoue2() {
+  doNotTurn = false;
   autoScroll();
   document.location = "#first";
   btn.removeEventListener("click", demarrageRoue2);
     var timout = setTimeout(function accelerer(){
-        var internal = setInterval(() => {
+        internal = setInterval(() => {
+            if (doNotTurn) {
+                doNotTurn = false;
+                clearInterval(internal);
+                return;
+            };
             scrollDistancePerSecond = scrollDistancePerSecond + 500;
             if (scrollDistancePerSecond > 10000) {
               contient.style.animationPlayState = "running"
               contient.style.animation = "shake 0.5s infinite";
               if (scrollDistancePerSecond === 20000) {
+                  console.log("test");
                   document.location = "#herve";
                  contient.style.animationPlayState = "paused";
                 cancelAnimationFrame(animation);
                   clearInterval(internal);
                   scrollDistancePerSecond = 2000;
                   btn.addEventListener("click",demarrageRoue2);
+                  clearTimeout(timout);
+                  return;
               }
             }
           }, 200);
@@ -47,15 +58,18 @@ btn.addEventListener("click", demarrageRoue2);
 //bouton reinitialiser
 const btn2 = document.getElementById("reset-button");
 function stopAnimation() {
+    doNotTurn = true;
     cancelAnimationFrame(animation);
     scrollDistancePerSecond = 2000; //on remet la vitesse de depart
-    btn.addEventListener("click",demarrageRoue2); //on remet la fonction demarrageRoue sur le bouton Demarrez      
+    btn.addEventListener("click",demarrageRoue2); //on remet la fonction demarrageRoue sur le bouton Demarrez    
 }
 
 btn2.addEventListener("click", () => {
     stopAnimation();
-    contient.style.animationPlayState = "paused"; //on stoppe lanimation Shaky  
     location.href = "#first";
+    contient.style.animationPlayState = "paused";
+    deleteTextInput();
+
 });
 var doc = window.document,
   context = doc.querySelector('.js-loop'),
@@ -134,6 +148,51 @@ if (document.readyState !== 'loading') {
 } else {
   doc.addEventListener('DOMContentLoaded', init, false)
 }
+
+
+// fonction qui remet les inputs de la roue à zero
+var elements = document.getElementsByClassName("inputWheel");
+function deleteTextInput() {
+    for (let index = 0; index < elements.length; index++) {
+        const element = elements[index];
+        element.placeholder = "Input your name here";
+        element.value = "";     
+    }
+}
+
+//fonction qui copie les 2 premiers input dans les 2 clones et inversement
+var input1 = elements[0];
+var input2 = elements[1];
+var inputclone1 = elements[elements.length - 2];
+var inputclone2 = elements[elements.length - 1];
+input1.addEventListener('input', function (evt) {
+     elements[elements.length - 2].value = this.value;
+})
+input2.addEventListener('input', function (evt) {
+    elements[elements.length - 1].value = this.value;
+})
+inputclone1.addEventListener('input', function (evt) {
+    input1.value = this.value;
+})
+inputclone2.addEventListener('input', function (evt) {
+   input2.value = this.value;
+})
+
+var noms = ["rerree","vgvyy","gvgvgvg"];
+    for (let index = 0; index < elements.length; index++) {
+        const element = elements[index];
+        element.addEventListener('blur', () => {
+            noms.push(element.value);
+            console.log(noms); 
+        })   
+    }
+
+
+    var rand = noms[Math.floor(Math.random() * noms.length)];
+    console.log(rand);
+
+
+
 
 
 
