@@ -59,15 +59,17 @@ function profileButton() {
     signSlider.classList.replace('slider-active', 'slider-closing');
     profileSlider.classList.toggle('slider-active');
     profileSlider.classList.toggle('slider-closing');  
+    bgDark.classList.remove('dark-bg-active');
   } else if (logSlider.classList.contains('slider-active'))
   {
     logSlider.classList.replace('slider-active', 'slider-closing');
     profileSlider.classList.toggle('slider-active');
-    profileSlider.classList.toggle('slider-closing');  
+    profileSlider.classList.toggle('slider-closing'); 
+    bgDark.classList.remove('dark-bg-active'); 
   } else
   { 
   profileSlider.classList.toggle('slider-active');
   profileSlider.classList.toggle('slider-closing');
-  bgDarkActivation();
+  bgDark.classList.remove('dark-bg-active');
   } 
 }
