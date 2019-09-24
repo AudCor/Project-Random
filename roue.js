@@ -23,7 +23,7 @@ var contient = document.getElementById("spin-div");
  function demarrageRoue2() {
   doNotTurn = false;
   autoScroll();
-  document.location = "#first";
+  document.location = "#choice0";
   btn.removeEventListener("click", demarrageRoue2);
     var timout = setTimeout(function accelerer(){
         internal = setInterval(() => {
@@ -37,14 +37,15 @@ var contient = document.getElementById("spin-div");
               contient.style.animationPlayState = "running"
               contient.style.animation = "shake 0.5s infinite";
               if (scrollDistancePerSecond === 20000) {
-                  console.log("test");
-                  document.location = "#herve";
+                  console.log(choixFinal);
+                  document.location = choixFinal;
                  contient.style.animationPlayState = "paused";
                 cancelAnimationFrame(animation);
                   clearInterval(internal);
                   scrollDistancePerSecond = 2000;
-                  btn.addEventListener("click",demarrageRoue2);
+                  /* btn.addEventListener("click",demarrageRoue2); */
                   clearTimeout(timout);
+                  btn.disabled = false;
                   return;
               }
             }
@@ -52,7 +53,18 @@ var contient = document.getElementById("spin-div");
     }, 1000);  
 }
 
-btn.addEventListener("click", demarrageRoue2);
+var noms = [];
+var rand = null;
+var choix = null;
+var choixFinal = null;
+// bouton demarrez
+btn.addEventListener("click", () =>{
+  noms = [];
+  demarrageRoue2();
+  addNameOnArray();
+  randomn(noms);
+  btn.disabled = true;
+});
 
 
 //bouton reinitialiser
@@ -66,11 +78,14 @@ function stopAnimation() {
 
 btn2.addEventListener("click", () => {
     stopAnimation();
-    location.href = "#first";
+    location.href = "#choice0";
     contient.style.animationPlayState = "paused";
     deleteTextInput();
+    noms = [];
+    btn.disabled = false;
 
 });
+//lutilisateur peut tourner la roue des 2 sens
 var doc = window.document,
   context = doc.querySelector('.js-loop'),
   clones = context.querySelectorAll('.is-clone'),
@@ -151,7 +166,7 @@ if (document.readyState !== 'loading') {
 
 
 // fonction qui remet les inputs de la roue à zero
-var elements = document.getElementsByClassName("inputWheel");
+var elements = document.getElementsByClassName("inputWheelTotal");
 function deleteTextInput() {
     for (let index = 0; index < elements.length; index++) {
         const element = elements[index];
@@ -160,36 +175,80 @@ function deleteTextInput() {
     }
 }
 
-//fonction qui copie les 2 premiers input dans les 2 clones et inversement
-var input1 = elements[0];
-var input2 = elements[1];
-var inputclone1 = elements[elements.length - 2];
-var inputclone2 = elements[elements.length - 1];
-input1.addEventListener('input', function (evt) {
-     elements[elements.length - 2].value = this.value;
+//fonction qui copie les 2 premiers inputs dans les 2 clones et inversement
+var input0 = document.getElementById("input0");
+var input1 = document.getElementById("input1");
+var inputclone0 = document.getElementById("inputclone0");
+var inputclone1 = document.getElementById("inputclone1");
+input0.addEventListener('input', function (evt) {
+     inputclone0.value = this.value;
 })
-input2.addEventListener('input', function (evt) {
-    elements[elements.length - 1].value = this.value;
+input1.addEventListener('input', function (evt) {
+    inputclone1.value = this.value;
+})
+inputclone0.addEventListener('input', function (evt) {
+    input0.value = this.value;
 })
 inputclone1.addEventListener('input', function (evt) {
-    input1.value = this.value;
-})
-inputclone2.addEventListener('input', function (evt) {
-   input2.value = this.value;
+   input1.value = this.value;
 })
 
-var noms = ["rerree","vgvyy","gvgvgvg"];
-    for (let index = 0; index < elements.length; index++) {
-        const element = elements[index];
-        element.addEventListener('blur', () => {
-            noms.push(element.value);
-            console.log(noms); 
-        })   
-    }
+
+//ajout des valeurs des inputs dans un array
+var realInput = document.getElementsByClassName("inputWheel");
+function addNameOnArray() {
+  for (let index = 0; index < realInput.length; index++) {
+        const element = realInput[index];
+          noms.push(element.value);
+}
+}
+//fonction choix randomn
+function randomn(noms) {
+  console.log(noms);
+  rand = noms[Math.floor(Math.random() * noms.length)];
+   choix = noms.indexOf(rand);
+  console.log(choix);
+   choixFinal = `#choice${choix}`;
+}
+//fonction qui retire une div de la roue
+var boutonMoins = document.getElementById("controlMoins");
+function removeLastDiv() {
+  var contentwrapper = document.getElementById("contentwrapper");
+  contentwrapper.removeChild(document.getElementById(`choice${realInput.length - 1}`));
+  if (realInput.length < 3) {//on ne peut pas descendre plus bas que 2 div
+    boutonMoins.disabled = true;
+    return
+  }
+}
+
+boutonMoins.addEventListener("click", () => {
+  removeLastDiv();
+  init ();//fonction remet a jour les clones
+})
+
+//fonction qui ajoute une div dans la roue
+var boutonPLus = document.getElementById("controlPlus");
+function addDivAtTheEnd() {
+  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class="rose"><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here"></section>`);
+}
+
+boutonPLus.addEventListener("click", () => {
+  addDivAtTheEnd();
+  init ();//fonction remet a jour les clones
+  if (realInput.length > 2) {//Des quil y a plus de 2 div on reactive le bouton moins
+    boutonMoins.disabled = false;
+  }
+})
 
 
-    var rand = noms[Math.floor(Math.random() * noms.length)];
-    console.log(rand);
+
+  
+  
+
+
+    
+  
+    
 
 
 
