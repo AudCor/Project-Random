@@ -3,6 +3,7 @@ const logSlider = document.querySelector('.log-slider');
 const profileSlider = document.querySelector('.profile-slider');
 const bgDark = document.querySelector('.dark-bg');
 console.log(signSlider);
+
 const bgDarkActivation = () => {
   if (signSlider.classList.contains('slider-closing') && logSlider.classList.contains('slider-closing') && profileSlider.classList.contains('slider-closing'))
     {
@@ -11,6 +12,15 @@ const bgDarkActivation = () => {
     {
       bgDark.classList.add('dark-bg-active');
     }
+}
+
+const bgDarkAway = () => {
+  if (bgDark.classList.contains('dark-bg-active'))
+  {
+    bgDark.classList.remove('dark-bg-active');
+    logSlider.classList.replace('slider-active', 'slider-closing');
+    signSlider.classList.replace('slider-active', 'slider-closing');
+  }
 }
 
 function signButton() {
@@ -25,6 +35,7 @@ function signButton() {
     profileSlider.classList.replace('slider-active', 'slider-closing');
     signSlider.classList.toggle('slider-active');
     signSlider.classList.toggle('slider-closing');
+    bgDarkActivation();
   } else
   {
     signSlider.classList.toggle('slider-active');
@@ -44,6 +55,7 @@ function loginButton() {
     profileSlider.classList.replace('slider-active', 'slider-closing');
     logSlider.classList.toggle('slider-active');
     logSlider.classList.toggle('slider-closing');  
+    bgDarkActivation();
   } else
   {
     logSlider.classList.toggle('slider-active');
