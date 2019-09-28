@@ -23,9 +23,10 @@ var contient = document.getElementById("spin-div");
  function demarrageRoue2() {
   doNotTurn = false;
   autoScroll();
-  document.location = "#choice0";
-  btn.removeEventListener("click", demarrageRoue2);
+  document.location = "#choice0"; // remet la roue à zéro, sur la première div de la roue
+  btn.removeEventListener("click", demarrageRoue2); // empêche clic sur bouton démarrer quand la roue est en train de tourner
     var timout = setTimeout(function accelerer(){
+        // fonction setInterval() : toutes les 1000 millisecondes (valeur déterminée ds setTimeOut()), on accélère de 200
         internal = setInterval(() => {
             if (doNotTurn) {
                 doNotTurn = false;
@@ -33,6 +34,7 @@ var contient = document.getElementById("spin-div");
                 return;
             };
             scrollDistancePerSecond = scrollDistancePerSecond + 500;
+            // si l'anomatin a vraiment beaucoup accéléré (sup à 10000), on lui rajoute une animation :
             if (scrollDistancePerSecond > 10000) {
               contient.style.animationPlayState = "running"
               contient.style.animation = "shake 0.5s infinite";
@@ -40,6 +42,7 @@ var contient = document.getElementById("spin-div");
                   console.log(choixFinal);
                   document.location = choixFinal;
                  contient.style.animationPlayState = "paused";
+                 // arrête l'animation "animation"
                 cancelAnimationFrame(animation);
                   clearInterval(internal);
                   scrollDistancePerSecond = 2000;
