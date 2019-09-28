@@ -1,9 +1,10 @@
-const signSlider = document.querySelector('.sign-slider');
-const logSlider = document.querySelector('.log-slider');
-const profileSlider = document.querySelector('.profile-slider');
-const bgDark = document.querySelector('.dark-bg');
+const signSlider = document.querySelector('.sign-slider'); // sélectionne les éléments ayant la classe "sign-slider"
+const logSlider = document.querySelector('.log-slider'); // sélectionne les éléments ayant la classe "log-slider"
+const profileSlider = document.querySelector('.profile-slider'); // sélectionne les éléments ayant la classe "profile-slider"
+const bgDark = document.querySelector('.dark-bg'); // sélectionne les éléments ayant la classe "dark-bg"
 console.log(signSlider);
 
+// fonction pour mettre un fond sombre sur la page
 const bgDarkActivation = () => {
   if (signSlider.classList.contains('slider-closing') && logSlider.classList.contains('slider-closing') && profileSlider.classList.contains('slider-closing'))
     {
@@ -14,6 +15,7 @@ const bgDarkActivation = () => {
     }
 }
 
+// fonction pour enlever le fond sombre sur la page
 const bgDarkAway = () => {
   if (bgDark.classList.contains('dark-bg-active'))
   {
@@ -23,6 +25,7 @@ const bgDarkAway = () => {
   }
 }
 
+// fonction appelée quand on clique sur le bouton "Inscription"
 function signButton() {
   if (logSlider.classList.contains('slider-active'))
   {
@@ -44,6 +47,7 @@ function signButton() {
   }
 }
 
+// fonction appelée quand on clique sur le bouton "Connexion"
 function loginButton() {
   if (signSlider.classList.contains('slider-active'))
   {
@@ -64,7 +68,7 @@ function loginButton() {
   }
 }
 
-
+// fonction appelée quand on clique sur le bouton "Profil"
 function profileButton() {
   if (signSlider.classList.contains('slider-active'))
   {
