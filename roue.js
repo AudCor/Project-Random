@@ -1,8 +1,61 @@
+//test Firebase
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+apiKey: "AIzaSyDO5kq1Bw_Cx558LUc1E2X3SOvdFcSdM20",
+authDomain: "randomator-test.firebaseapp.com",
+databaseURL: "https://randomator-test.firebaseio.com",
+projectId: "randomator-test",
+storageBucket: "",
+messagingSenderId: "162142802915",
+appId: "1:162142802915:web:b4ce6dce13b52af9f8c6d6"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+console.log(firebase)
+
+// Get a reference to the database service
+var database = firebase.database();
+var ref = database.ref('lists');
+function envoyerList() {
+  var data = {
+    name : "wyharm",
+    list : noms
+  }
+   ref = database.ref('lists');
+  ref.push(data);
+}
+ref.on("value", gotData, errData);
+function gotData (data) {
+  var valeurData = data.val();
+  var keys = Object.keys(valeurData);
+  for (let index = 0; index < keys.length; index++) {
+    const element = keys[index];
+    var names = valeurData[element].name;
+    var listes = valeurData[element].list;
+    console.log(listes)
+    
+  }
+}
+function errData(err) {
+  console.log(err)
+}
+
+
+
+document.getElementById("bdd").addEventListener("click", ()=> {
+  envoyerList();
+});
+
+
+
+
+
 
 
 
 var time = 4000;
-var scrollDistancePerSecond = 1000; // Scroll 50px every second.
+var scrollDistancePerSecond = 1000; // Scroll 1000px every second.
 var animation = null;
 var doNotTurn = false;
 var internal = null;
@@ -46,9 +99,14 @@ var contient = document.getElementById("spin-div");
                 cancelAnimationFrame(animation);
                   clearInterval(internal);
                   scrollDistancePerSecond = 2000;
-                  /* btn.addEventListener("click",demarrageRoue2); */
                   clearTimeout(timout);
-                  btn.disabled = false;
+                  if(myArray.length === noms.length){
+                    btn.disabled = true;
+                  }
+                  else {
+                    btn.disabled = false;
+                  }
+                  addWinnerOnlist();
                   return;
               }
             }
@@ -57,16 +115,17 @@ var contient = document.getElementById("spin-div");
 }
 
 var noms = [];
-var rand = null;
 var choix = null;
 var choixFinal = null;
+var doNotAdd = false;
 // bouton demarrez
 btn.addEventListener("click", () =>{
-  noms = [];
   demarrageRoue2();
   addNameOnArray();
-  randomn(noms);
+  random3();
   btn.disabled = true;
+  griseInputs();
+  alert("alert")
 });
 
 
@@ -84,9 +143,12 @@ btn2.addEventListener("click", () => {
     location.href = "#choice0";
     contient.style.animationPlayState = "paused";
     deleteTextInput();
-    noms = [];
     btn.disabled = false;
-
+    doNotAdd = false;
+    noms = [];
+    myArray = [];
+    winnersList.innerHTML = "";
+    startStyleInputs();
 });
 //lutilisateur peut tourner la roue des 2 sens
 var doc = window.document,
@@ -148,7 +210,7 @@ function scrollUpdate () {
     }, 40);
   }
 }
-
+//recalcule les clones
 function init () {
   reCalc();
   
@@ -196,23 +258,34 @@ inputclone1.addEventListener('input', function (evt) {
    input1.value = this.value;
 })
 
-
 //ajout des valeurs des inputs dans un array
 var realInput = document.getElementsByClassName("inputWheel");
 function addNameOnArray() {
+  if (doNotAdd) {
+    return};
   for (let index = 0; index < realInput.length; index++) {
         const element = realInput[index];
           noms.push(element.value);
 }
+doNotAdd = true;
 }
-//fonction choix randomn
-function randomn(noms) {
-  console.log(noms);
-  rand = noms[Math.floor(Math.random() * noms.length)];
-   choix = noms.indexOf(rand);
-  console.log(choix);
-   choixFinal = `#choice${choix}`;
+//fonction qui grise les inputs
+function griseInputs(){
+  for (let index = 0; index < elements.length; index++) {
+    const element = elements[index];
+    element.disabled = true;//on ne peut plus modifier le input
+    element.style.color = "grey"; 
+  }
 }
+//fonction qui remet les inputs dans leurs style de depart
+function startStyleInputs(){
+  for (let index = 0; index < elements.length; index++) {
+    const element = elements[index];
+    element.disabled = false;
+    element.style.color = "black"; 
+  }
+}
+
 //fonction qui retire une div de la roue
 var boutonMoins = document.getElementById("controlMoins");
 function removeLastDiv() {
@@ -232,16 +305,62 @@ boutonMoins.addEventListener("click", () => {
 //fonction qui ajoute une div dans la roue
 var boutonPLus = document.getElementById("controlPlus");
 function addDivAtTheEnd() {
-  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class="rose"><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here"></section>`);
+  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here"></section>`);
 }
 
 boutonPLus.addEventListener("click", () => {
+  colorChoice();
   addDivAtTheEnd();
   init ();//fonction remet a jour les clones
   if (realInput.length > 2) {//Des quil y a plus de 2 div on reactive le bouton moins
     boutonMoins.disabled = false;
   }
 })
+//fonction qui choisi une couleur differente a chaque nouvel div
+var choixCouleurs = null;
+const couleurs = ["green","yellow","blue","rose","grey","red"];
+function colorChoice() {
+  choixCouleurs = couleurs[Math.floor(Math.random() * couleurs.length)];
+if (document.getElementById(`choice${realInput.length - 1}`).className === choixCouleurs) {
+  colorChoice();
+}
+}
+
+//fonction random 
+const winnersList = document.getElementById("winnersList");
+let myArray = [];
+function random3() {
+  console.log(noms);
+  rand = noms[Math.floor(Math.random() * noms.length)];
+if(myArray.includes(rand)) {
+ random3();
+}
+ else {
+   myArray.push(rand)
+   choix = noms.indexOf(rand);
+   choixFinal = `#choice${choix}`;
+   console.log(myArray) 
+if(myArray.length === noms.length){
+      console.log("cest finis")
+      return
+   }
+ }
+}
+
+//fonction qui cree element dans la div des gagnants
+function addWinnerOnlist() {
+  var creaElt = document.createElement("li"); // Création d'un élément li
+   creaElt.appendChild(document.createTextNode(rand)); // Définition de son contenu textuel
+   winnersList.appendChild(creaElt); // Insertion du nouvel élément 
+}
+
+
+
+
+
+
+
+
 
 
 

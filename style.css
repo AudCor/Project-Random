@@ -50,8 +50,8 @@ nav ul li button {
 }
 
 #logo {
-    font-size: 36px;
-    margin-left: 20px;
+    font-size: 1em;
+    margin-left: 1em;
 }
 
 /*------ Sliders ----------*/
@@ -114,6 +114,28 @@ nav ul li button {
 }
 
 /*------ Main site --------*/
+
+/* main*/
+
+main {
+    display: flex;
+}
+
+#listContainer {
+    width: 30%;
+    border: black 5px solid;
+}
+#listContainer ul {
+    list-style: none;
+    font-size: 40px;
+}
+#controlsButtons {
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Spin */
 
