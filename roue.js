@@ -1,59 +1,3 @@
-//test Firebase
-
-// Your web app's Firebase configuration
-var firebaseConfig = {
-apiKey: "AIzaSyDO5kq1Bw_Cx558LUc1E2X3SOvdFcSdM20",
-authDomain: "randomator-test.firebaseapp.com",
-databaseURL: "https://randomator-test.firebaseio.com",
-projectId: "randomator-test",
-storageBucket: "",
-messagingSenderId: "162142802915",
-appId: "1:162142802915:web:b4ce6dce13b52af9f8c6d6"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-console.log(firebase)
-
-// Get a reference to the database service
-var database = firebase.database();
-var ref = database.ref('lists');
-function envoyerList() {
-  var data = {
-    name : "wyharm",
-    list : noms
-  }
-   ref = database.ref('lists');
-  ref.push(data);
-}
-ref.on("value", gotData, errData);
-function gotData (data) {
-  var valeurData = data.val();
-  var keys = Object.keys(valeurData);
-  for (let index = 0; index < keys.length; index++) {
-    const element = keys[index];
-    var names = valeurData[element].name;
-    var listes = valeurData[element].list;
-    console.log(listes)
-    
-  }
-}
-function errData(err) {
-  console.log(err)
-}
-
-
-
-document.getElementById("bdd").addEventListener("click", ()=> {
-  envoyerList();
-});
-
-
-
-
-
-
-
-
 var time = 4000;
 var scrollDistancePerSecond = 1000; // Scroll 1000px every second.
 var animation = null;
@@ -122,7 +66,7 @@ btn.addEventListener("click", () =>{
   random3();
   btn.disabled = true;
   griseInputs();
-  alert("alert")
+  
 });
 
 
