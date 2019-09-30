@@ -50,13 +50,60 @@
 
     <!-- Site et Fonctionnalités-->
     <main>
-        <div id="spin-div">
+        <div class="container" id="spin-div">
+                <div id="contentwrapper" class="Loop js-loop">
+                        <section id="choice0"  class="green">
+                            <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice1" class="red">
+                          <input id="input1" class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice2" class="blue">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice3" class="rose">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice4" class="grey">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice5" class="yellow">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice6" class="blue">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice7" class="orange">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice8" class="blue">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section id="choice9" class="yellow">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                      
+                        <!--
+                        These blocks are the same as the first blocks to get that looping illusion going.
+                        You need to add clones to fill out a full viewport height.
+                        -->
+                        <section class="green is-clone">
+                            <input id="inputclone0" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                        <section class="red is-clone">
+                            <input id="inputclone1" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input your name here">
+                        </section>
+                      </div>
 
+                      <div id="spin-buttons">
+                            <button id="turn-button">Tourner la roue !</button>
+                            <button id="reset-button">Réinitialiser</button>
+                        </div>
         </div>
-        <div id="spin-buttons">
-            <button id="turn-button">Tourner la roue !</button>
-            <button id="reset-button">Réinitialiser</button>
-        </div>
+      <div>
+          <button id="controlPlus" class="controlSize">+</button>
+          <button id="controlMoins" class="controlSize">-</button>
+      </div>
     </main>
 
     <!-- Footer de la page -->
@@ -72,6 +119,7 @@
     </script>
 
     <script src="main.js"></script>
+    <script src="roue.js"></script>
 </body>
 
 </html>
