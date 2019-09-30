@@ -1,0 +1,1 @@
+// Fonctionnalité : pour les utilisateurs logués, possibilité de sauvegarder une ou plusieurs listes de noms, qu'on pourra ensuite envoyer dans la roue
