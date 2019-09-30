@@ -2,7 +2,7 @@ const signSlider = document.querySelector('.sign-slider'); // sélectionne les �
 const logSlider = document.querySelector('.log-slider'); // sélectionne les éléments ayant la classe "log-slider"
 const profileSlider = document.querySelector('.profile-slider'); // sélectionne les éléments ayant la classe "profile-slider"
 const bgDark = document.querySelector('.dark-bg'); // sélectionne les éléments ayant la classe "dark-bg"
-console.log(signSlider);
+
 
 // fonction pour mettre un fond sombre sur la page
 const bgDarkActivation = () => {
