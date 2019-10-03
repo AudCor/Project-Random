@@ -125,7 +125,6 @@ btn.addEventListener("click", () =>{
   random3();
   btn.disabled = true;
   griseInputs();
-  alert("alert")
 });
 
 

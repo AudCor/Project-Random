@@ -17,6 +17,7 @@ rouge               #e23e57
 body {
     background-color: #eeeeee;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 nav {
