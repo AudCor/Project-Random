@@ -176,7 +176,7 @@ var elements = document.getElementsByClassName("inputWheelTotal");
 function deleteTextInput() {
     for (let index = 0; index < elements.length; index++) {
         const element = elements[index];
-        element.placeholder = "Input your name here";
+        element.placeholder = "Input here";
         element.value = "";     
     }
 }
@@ -246,7 +246,7 @@ boutonMoins.addEventListener("click", () => {
 //fonction qui ajoute une div dans la roue
 var boutonPLus = document.getElementById("controlPlus");
 function addDivAtTheEnd() {
-  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here"></section>`);
+  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input here"></section>`);
 }
 
 boutonPLus.addEventListener("click", () => {
