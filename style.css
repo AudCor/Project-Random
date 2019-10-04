@@ -8,14 +8,34 @@ rouge               #e23e57
 
 */
 
+@font-face {
+    font-family: 'celestial';
+    src: url('CelestialFont/celestialfree-webfont.woff2') format('woff2'),
+         url('CelestialFont/celestialfree-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bolton';
+    src: url('BoltonFont/bolton-webfont.woff2') format('woff2'),
+         url('BoltonFont/bolton-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: 'bolton';
 }
 
 body {
-    background-color: #eeeeee;
+    background-image: url('images/Background1.jpg');
+    background-size: 100%;
     overflow-x: hidden;
 }
 
@@ -50,8 +70,10 @@ nav ul li button {
 }
 
 #logo {
-    font-size: 1em;
+    font-size: 3.5em;
     margin-left: 1em;
+    
+    font-family: 'celestial';
 }
 
 /*------ Sliders ----------*/
@@ -68,12 +90,13 @@ nav ul li button {
     transition: transform 0.4s ease-in;
 }
  .sign-slider {
-    background-color: #e23e57;
+    background-image: url('/images/CADRE.png');
+    background-repeat: no-repeat;
     z-index: 100;
     position: absolute;
-    right: 0px;
-    top: 60px;
-    height: 92.7vh;
+    right: 30px;
+    top: 120px;
+    height: 75vh;
     width: 33vw;
     transform: translateX(100%);
     transition: transform 0.4s ease-in;
@@ -91,7 +114,7 @@ nav ul li button {
 }
 
 .slider-active {
-    transform: translateX(0%);
+    transform: translateX(15%);
 }
 
 .slider-closing {
@@ -188,9 +211,13 @@ section {
     border: black 1px;
     background-color: #66FF66;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 26px;
     animation: bordure 2s infinite;
     text-transform: uppercase;
+    text-align: center;
+    height: 4.2rem;
+    width: 20rem;
+
 }
 
 @keyframes bordure {
