@@ -298,7 +298,7 @@ function addWinnerOnlist() {
    creaElt.appendChild(document.createTextNode(rand)); // Définition de son contenu textuel
    winnersList.appendChild(creaElt); // Insertion du nouvel élément 
 }
-console.log(document.cookie)
+
 
 //A Function to Set a Cookie
 function setCookie(cname,cvalue,exdays) {
@@ -423,17 +423,18 @@ console.log(newPeopleList)
 function createLiList(i) {
   var ulLists = document.getElementById('ulLists');
     var liVoslists = document.createElement('li');
-    var btnLists = document.createElement('button');
-    var resto = localStorage.getItem(localStorage.key(i));
-    var arrayCorrespondant = Object.values(JSON.parse(resto));
-    btnLists.className = "boutonsListes"
-    btnLists.setAttribute("title", arrayCorrespondant[0])
-    btnLists.textContent = keysName;
-    liVoslists.appendChild(btnLists);
+    var btnList = document.createElement('button');
+    var resto = localStorage.getItem(i);
+    console.log(resto)
+    var arrayCorrespondant = Object.values(JSON.parse(resto))[0];
+    btnList.className = "boutonsListes"
+    btnList.setAttribute("title", arrayCorrespondant)
+    btnList.textContent = keysName;
+    liVoslists.appendChild(btnList);
     ulLists.appendChild(liVoslists);
-    btnLists.addEventListener('click',()=>{
-      UpdateWheel(arrayCorrespondant[0])
-      console.log(arrayCorrespondant[0])
+    btnList.addEventListener('click',()=>{
+      UpdateWheel(arrayCorrespondant)
+      console.log(arrayCorrespondant)
     })
     
 }
@@ -446,14 +447,16 @@ saveListbtn.addEventListener('click', ()=>{
     [keysName]: newPeopleList
   }
   if (localStorage.getItem("myList0")) {
-    localStorage.setItem(`myList${longueurLocalStorage}`, JSON.stringify(obj))
-    createLiList(longueurLocalStorage - 1)
+    var varPourcreatList = `myList${longueurLocalStorage}`;
+    localStorage.setItem(varPourcreatList, JSON.stringify(obj));
+    
+    createLiList(varPourcreatList);
     
   }
   else {
     /* localStorage.clear(); */
-    localStorage.setItem(`myList0`, JSON.stringify(obj))
-    createLiList(0)
+    localStorage.setItem(`myList0`, JSON.stringify(obj));
+    createLiList(`myList0`);
   }
   showList.innerHTML = "";
   newNameList.value = "";
@@ -502,8 +505,13 @@ function updateList() {
 function UpdateWheel(tableau) {
   if (realInput.length > tableau.length) {
     while (realInput.length > tableau.length) {
+      colorChoice();
       removeLastDiv();
-      init();
+      if (realInput.length === tableau.length) {
+        init();
+      
+      }
+      
     }
     for (let y = 0; y < realInput.length; y++) {
       const element = realInput[y];
@@ -511,15 +519,25 @@ function UpdateWheel(tableau) {
       element.value = element2
     } 
   }
-if (realInput.length < tableau.length) {
+else if (realInput.length < tableau.length) {
   while (realInput.length < tableau.length) {
     colorChoice();
     addDivAtTheEnd();
-    init();
+    if (realInput.length === tableau.length) {
+      init();
+    
+    }
   }
-  for (let y = 0; y < realInput.length; y++) {
-    const element = realInput[y];
-    const element2 = tableau[y];
+  for (let i = 0; i < realInput.length; i++) {
+    const element = realInput[i];
+    const element2 = tableau[i];
+    element.value = element2
+  } 
+}
+else if (realInput.length === tableau.length) {
+  for (let i = 0; i < realInput.length; i++) {
+    const element = realInput[i];
+    const element2 = tableau[i];
     element.value = element2
   } 
 }
