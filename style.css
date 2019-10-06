@@ -108,7 +108,7 @@ nav ul li button {
     right: 0px;
     top: 60px;
     height: 92.7vh;
-    width: 33vw;
+    width: 35vw;
     transform: translateX(100%);
     transition: transform 0.4s ease-in;
     display: flex;
@@ -121,11 +121,11 @@ nav ul li button {
 }
 
 #accroche{
-    font-size: 2em;
+    font-size: 1.1em;
     text-align: center;
 }
 .label{
-    font-size: 1.3em;
+    font-size: 1em;
     text-align: center;
 }
 .showLists{
@@ -154,6 +154,9 @@ nav ul li button {
 }
 .newParticipants{
     display:none;
+}
+#labelParticipant{
+    font-size: 0.8em;
 }
 
 
