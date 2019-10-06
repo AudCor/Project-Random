@@ -1,3 +1,7 @@
+window.onload = ()=>{
+  updateList();
+  checkCookie();
+}
 var time = 4000;
 var scrollDistancePerSecond = 1000; // Scroll 1000px every second.
 var animation = null;
@@ -181,6 +185,7 @@ function deleteTextInput() {
     }
 }
 
+
 //fonction qui copie les 2 premiers inputs dans les 2 clones et inversement
 var input0 = document.getElementById("input0");
 var input1 = document.getElementById("input1");
@@ -287,13 +292,259 @@ if(myArray.length === noms.length){
    }
  }
 }
-
 //fonction qui cree element dans la div des gagnants
 function addWinnerOnlist() {
   var creaElt = document.createElement("li"); // Création d'un élément li
    creaElt.appendChild(document.createTextNode(rand)); // Définition de son contenu textuel
    winnersList.appendChild(creaElt); // Insertion du nouvel élément 
 }
+console.log(document.cookie)
+
+//A Function to Set a Cookie
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date(); //Create an date object
+  d.setTime(d.getTime() + (exdays*1000*60*60*24)); //Set the time to exdays from the current date in milliseconds. 1000 milliseonds = 1 second
+  var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+  document.cookie = cname+"="+cvalue+"; "+expires;//Set the cookie with value and the expiration date
+}
+//A Function to Get a Cookie
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+//A Function to Check a Cookie //fonction qui verifie si un username est deja enregistre
+function checkCookie() {
+
+  var username = getCookie("username");
+  if (username != "") {
+    userNameH2.textContent = username
+
+   for (let index = 0; index < messageAcceuil.length; index++) {
+    const element = messageAcceuil[index];
+    element.style.display = "none";
+  }
+  for (let index = 0; index < newAcceuil.length; index++) {
+    const element = newAcceuil[index];
+    element.style.display = "flex";
+  } 
+  }
+}
+
+
+//fonction qui efface le message dacceuil
+var btnAcceuil = document.getElementById("btnAcceuil");
+var messageAcceuil = document.getElementsByClassName("acceuilMessage");
+btnAcceuil.addEventListener("click", ()=>{
+    for (let index = 0; index < messageAcceuil.length; index++) {
+      const element = messageAcceuil[index];
+      element.style.display = "none";
+    } 
+})
+//input userName devient userNameH2
+var userName = document.getElementById("userName")
+var userNameH2 = document.getElementById("userNameH2");
+var newAcceuil = document.getElementsByClassName("newAcceuil");
+userName.addEventListener("input", ()=>{
+  userNameH2.textContent = userName.value
+})
+//affichage newAcceuil //enregitrement du username dans les cookies
+btnAcceuil.addEventListener('click', ()=> {
+  for (let index = 0; index < newAcceuil.length; index++) {
+    const element = newAcceuil[index];
+    element.style.display = "flex";
+  }
+    var username = userName.value
+  if (username != "" && username != null) {
+    
+    setCookie("username", username, 365);
+  }
+})
+//affichage input NewnameList
+var btnAjouter = document.getElementById('btnAjouter');
+var formNewNameList = document.getElementById('formNewNameList');
+btnAjouter.addEventListener('click', ()=>{
+  formNewNameList.style.display ="contents";
+  btnAjouter.disabled = true;
+})
+//input newNameList devient newNameListH2
+var keysName;
+var newNameList = document.getElementById('newNameList');
+let newNameListH2 = document.getElementById('newNameListH2');
+newNameList.addEventListener("input", ()=>{
+  newNameListH2.textContent = newNameList.value
+   keysName = newNameList.value;
+})
+//disparition input nom nouvelle liste
+var newNameListBtn = document.getElementById('newNameListBtn');
+var newParticipants = document.getElementsByClassName("newParticipants");
+newNameListBtn.addEventListener('click', ()=>{
+  formNewNameList.style.display ="none";
+  newNameListBtn.disabled = true;
+  for (let index = 0; index < newParticipants.length; index++) {
+    const element = newParticipants[index];
+    element.style.display = "flex"; 
+  }
+})
+//creation li pour chaque participants
+let newPeopleList = [];
+var btnAddParticipant = document.getElementById('btnAddParticipant');
+var participant = document.getElementById('participant');
+var showList = document.getElementById('showList')
+let saveListbtn = document.getElementById('saveListbtn');
+btnAddParticipant.addEventListener('click', ()=>{
+    newPeopleList.push(participant.value)//on rentre les elements dans un array
+    var liparticipant = document.createElement('li');
+    liparticipant.classList.add('linewList')
+    liparticipant.textContent = participant.value
+    showList.appendChild(liparticipant);
+    participant.value = " ";
+    var linewList = document.getElementsByClassName('linewList');
+    if (linewList.length > 10) {
+      btnAddParticipant.disabled = true;
+        return
+    }
+    if (linewList.length >= 2) {
+      saveListbtn.disabled = false;
+    }  
+console.log(newPeopleList)
+})
+//fonction qui rajoute un li a liste des listes 
+function createLiList(i) {
+  var ulLists = document.getElementById('ulLists');
+    var liVoslists = document.createElement('li');
+    var btnLists = document.createElement('button');
+    var resto = localStorage.getItem(localStorage.key(i));
+    var arrayCorrespondant = Object.values(JSON.parse(resto));
+    btnLists.className = "boutonsListes"
+    btnLists.setAttribute("title", arrayCorrespondant[0])
+    btnLists.textContent = keysName;
+    liVoslists.appendChild(btnLists);
+    ulLists.appendChild(liVoslists);
+    btnLists.addEventListener('click',()=>{
+      UpdateWheel(arrayCorrespondant[0])
+      console.log(arrayCorrespondant[0])
+    })
+    
+}
+// creer un objet avec la nouvelle liste et envoyer objet dans le localStorage
+var obj = {};
+
+saveListbtn.addEventListener('click', ()=>{
+  var longueurLocalStorage = localStorage.length;
+  obj = {
+    [keysName]: newPeopleList
+  }
+  if (localStorage.getItem("myList0")) {
+    localStorage.setItem(`myList${longueurLocalStorage}`, JSON.stringify(obj))
+    createLiList(longueurLocalStorage - 1)
+    
+  }
+  else {
+    /* localStorage.clear(); */
+    localStorage.setItem(`myList0`, JSON.stringify(obj))
+    createLiList(0)
+  }
+  showList.innerHTML = "";
+  newNameList.value = "";
+  saveListbtn.disabled = true;
+  newNameListH2.innerText = "";
+  btnAjouter.disabled = false;
+  newNameListBtn.disabled = false;
+  newPeopleList = [];
+  keysName = "";
+  obj = {};
+  for (let index = 0; index < newParticipants.length; index++) {
+    const element = newParticipants[index];
+    element.style.display = "none"; 
+  }
+})
+//update la listes des listes crees au reload de la page
+var nomsData = []
+function updateList() {
+  for (var i = 0; i < localStorage.length; i++) {
+    var resto = localStorage.getItem(localStorage.key(i));
+    var titreList = Object.keys(JSON.parse(resto));
+    var ulLists = document.getElementById('ulLists');
+    var liVoslists = document.createElement('li');
+    var btnLists = document.createElement('button');
+    var arrayCorrespondant = Object.values(JSON.parse(resto));
+    btnLists.textContent = titreList;
+    btnLists.id = `myList${i}`;
+    btnLists.className = "boutonsListes"
+    btnLists.setAttribute("title", arrayCorrespondant[0])
+    liVoslists.appendChild(btnLists);
+    ulLists.appendChild(liVoslists);
+ }
+ var boutonsListes = document.getElementsByClassName("boutonsListes");
+
+    for (let index = 0; index < boutonsListes.length; index++) {
+      const element = boutonsListes[index];
+      element.addEventListener('click', ()=>{
+        var arrayist = Object.values(JSON.parse(localStorage.getItem(localStorage.key(index))))[0];
+        UpdateWheel(arrayist);
+
+      })
+    }
+}
+
+//mise a jour div dans la roue 
+function UpdateWheel(tableau) {
+  if (realInput.length > tableau.length) {
+    while (realInput.length > tableau.length) {
+      removeLastDiv();
+      init();
+    }
+    for (let y = 0; y < realInput.length; y++) {
+      const element = realInput[y];
+      const element2 = tableau[y];
+      element.value = element2
+    } 
+  }
+if (realInput.length < tableau.length) {
+  while (realInput.length < tableau.length) {
+    colorChoice();
+    addDivAtTheEnd();
+    init();
+  }
+  for (let y = 0; y < realInput.length; y++) {
+    const element = realInput[y];
+    const element2 = tableau[y];
+    element.value = element2
+  } 
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
