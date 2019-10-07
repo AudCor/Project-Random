@@ -40,7 +40,8 @@ body {
 }
 
 nav {
-    background-color: #393e46;
+    background-color: #D0D0DC;
+    background-image: url("https://transparenttextures.com/patterns/black-felt.png");;
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -55,7 +56,7 @@ nav ul {
 }
 
 nav ul li button {
-    background-color: #00adb5;
+    background-color: #A6925F;;
     z-index: 100;
     width: 70px;
     height: 30px;
@@ -72,7 +73,7 @@ nav ul li button {
 #logo {
     font-size: 3.5em;
     margin-left: 1em;
-    
+    color: #F1CEA8;
     font-family: 'celestial';
 }
 
@@ -186,33 +187,20 @@ section {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
-.red {
-    background: #FF4136;
+.red, .rose, .yellow, .orange{
+    background-color: #F1CEA8;
+    background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+
 }
-.green {
-    background: #2ECC40;
+.green, .grey, .blue {
+    background-color: #D0D0DC;
+    background-image: url("https://transparenttextures.com/patterns/black-felt.png");
 }
-.blue {
-    background: #0074D9;
-}
-.orange {
-    background: rebeccapurple;
-}
-.yellow {
-      background: yellow;
-}
-.rose {
-      background: pink;
-}
-.grey {
-      background: grey;
-}
+
 .inputWheel, .inputWheelClone {
-    border: black 1px;
-    background-color: #66FF66;
+    background-color: transparent;;
     text-transform: uppercase;
     font-size: 26px;
-    animation: bordure 2s infinite;
     text-transform: uppercase;
     text-align: center;
     height: 4.2rem;
@@ -267,13 +255,13 @@ section {
 }
 
 #turn-button {
-    background-color: #00adb5;
+    background-color: #A6925F;
     color: white;
     font-size: 1.5em;
 }
 
 #reset-button {
-    background-color: #e23e57;
+    background-color: #D0D0DC;
     color: white;
     font-size: 1.5em;
 }
