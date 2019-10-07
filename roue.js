@@ -403,12 +403,15 @@ var participant = document.getElementById('participant');
 var showList = document.getElementById('showList')
 let saveListbtn = document.getElementById('saveListbtn');
 btnAddParticipant.addEventListener('click', ()=>{
+    if (participant.value != "" && participant.value != null) {
+      
+    
     newPeopleList.push(participant.value)//on rentre les elements dans un array
     var liparticipant = document.createElement('li');
     liparticipant.classList.add('linewList')
     liparticipant.textContent = participant.value
     showList.appendChild(liparticipant);
-    participant.value = " ";
+    participant.value = "";
     var linewList = document.getElementsByClassName('linewList');
     if (linewList.length > 10) {
       btnAddParticipant.disabled = true;
@@ -418,6 +421,7 @@ btnAddParticipant.addEventListener('click', ()=>{
       saveListbtn.disabled = false;
     }  
 console.log(newPeopleList)
+  }
 })
 //fonction qui rajoute un li a liste des listes 
 function createLiList(i) {
@@ -516,7 +520,8 @@ function UpdateWheel(tableau) {
     for (let y = 0; y < realInput.length; y++) {
       const element = realInput[y];
       const element2 = tableau[y];
-      element.value = element2
+      element.value = element2;
+      inputclone0.value = tableau[0];
     } 
   }
 else if (realInput.length < tableau.length) {
@@ -532,6 +537,7 @@ else if (realInput.length < tableau.length) {
     const element = realInput[i];
     const element2 = tableau[i];
     element.value = element2
+    inputclone0.value = tableau[0];
   } 
 }
 else if (realInput.length === tableau.length) {
@@ -539,6 +545,7 @@ else if (realInput.length === tableau.length) {
     const element = realInput[i];
     const element2 = tableau[i];
     element.value = element2
+    inputclone0.value = tableau[0];
   } 
 }
 }
