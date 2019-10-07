@@ -109,10 +109,57 @@ nav ul li button {
     right: 0px;
     top: 60px;
     height: 92.7vh;
-    width: 33vw;
+    width: 35vw;
     transform: translateX(100%);
     transition: transform 0.4s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
+#logoProfil{
+    width: 6em;
+}
+
+#accroche{
+    font-size: 1.1em;
+    text-align: center;
+}
+.label{
+    font-size: 1em;
+    text-align: center;
+}
+.showLists{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+#btnAjouter{
+    width: 40px;
+}
+.newAcceuil{
+    display: none;
+    justify-content: space-around;
+    width: 50%;
+}
+#formNewNameList{
+    display: none;
+}
+#btnAddParticipant{
+    width: 40px;
+}
+#saveListbtn{
+    margin-top: 5px;
+    font-size: 1.1em;
+    padding: 5px;
+}
+.newParticipants{
+    display:none;
+}
+#labelParticipant{
+    font-size: 0.8em;
+}
+
 
 .slider-active {
     transform: translateX(15%);

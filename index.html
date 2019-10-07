@@ -45,6 +45,56 @@
         </div>
         <div class="profile-slider slider-closing">
 
+            <div id="acceuilLogo">
+                <img id="logoProfil" src="images/icons/001-top-hat.png" alt="">
+            </div>
+            <div class="acceuilMessage">
+                <p id="accroche">Utilisez cet espace pour enregister vos listes personnalisées</p>
+            </div>
+            <div class="acceuilMessage">
+                <label class="label" for="">Enter your username</label>
+                <input id="userName" type="text">
+                <button id="btnAcceuil">Submit</button>
+            </div>
+            <div class="newAcceuil">
+                <h3>Bienvenue</h3>
+            </div>
+            <div class="newAcceuil">
+                <h2 id="userNameH2"></h2>
+            </div>
+            <div class="newAcceuil">
+                <p>Vos listes</p>
+                <ul id="ulLists">
+                    
+                </ul>
+            </div>
+            <div class="newAcceuil">
+                <p>Ajouter une liste</p>
+                <button id="btnAjouter">+</button>
+            </div>
+            <div id="formNewNameList">
+                <label for="">Entrez le nom de votre nouvelle liste</label>
+                <input id="newNameList" type="text">
+                <button id="newNameListBtn">Valider</button>
+                <h3></h3>
+            </div>
+            <div>
+                <h2 id="newNameListH2"></h2>
+            </div>
+            <div class="newParticipants">
+                <label id="labelParticipant" for="">Entrez le nom du participant :</label>
+                <input id="participant" type="text">
+                <button id="btnAddParticipant">+</button>
+            </div>
+            <div class="newParticipants">
+                <ul id="showList">
+
+                </ul>
+            </div>
+            <div class="newParticipants">
+                <button id="saveListbtn" disabled>Enregistrez votre liste</button>
+            </div>
+
         </div>
     </header>
 
@@ -53,34 +103,34 @@
         <div class="container" id="spin-div">
                 <div id="contentwrapper" class="Loop js-loop">
                         <section id="choice0"  class="green">
-                            <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice1" class="red">
-                          <input id="input1" class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                          <input id="input1" class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice2" class="green">
                             <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
                         </section>
                         <section id="choice3" class="rose">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice4" class="grey">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice5" class="yellow">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice6" class="blue">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice7" class="orange">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice8" class="blue">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section id="choice9" class="yellow">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                       
                         <!--
@@ -88,10 +138,10 @@
                         You need to add clones to fill out a full viewport height.
                         -->
                         <section class="green is-clone">
-                            <input id="inputclone0" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input id="inputclone0" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                         <section class="red is-clone">
-                            <input id="inputclone1" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input id="inputclone1" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here">
                         </section>
                       </div>
 
@@ -119,10 +169,6 @@
     <footer>
 
     </footer>
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
     <script src="main.js"></script>
     <script src="roue.js"></script>
 </body>
