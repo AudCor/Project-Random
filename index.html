@@ -16,83 +16,61 @@
         <nav>
             <h1 id="logo">RANDOMATOR</h1>
             <ul>
-                <li><button class="sign-button" onclick="signButton()">Inscription</button></li>
-                <li><button class="log-button" onclick="loginButton()">Connexion</button></li>
                 <li><button class="profile-button" onclick="profileButton()">Profil</button></li>
             </ul>
         </nav>
         <div class="dark-bg" onclick="bgDarkAway()"></div>
 
-        <div class="sign-slider slider-closing">
-            <form>
-                <div id="divForm">
-                    <input type="text" placeholder="Prénom">
-                    <input type="text" placeholder="Identifiant">
-                    <input type="email" placeholder="@">
-                    <input type="password" placeholder="Mot de passe">
-                    <div id="divSend"><button>Submit !</button></div>
-                </div> 
-            </form>
-        </div>
-        <div class="log-slider slider-closing">
-            <form>
-                <div id="divForm">
-                    <input type="text" placeholder="Identifiant">
-                    <input type="password" placeholder="Mot de passe">
-                    <div id="divSend"><button>Submit !</button></div>
-                </div> 
-            </form>
-        </div>
         <div class="profile-slider slider-closing">
 
-            <div id="acceuilLogo">
-                <img id="logoProfil" src="images/icons/001-top-hat.png" alt="">
-            </div>
-            <div class="acceuilMessage">
-                <p id="accroche">Utilisez cet espace pour enregister vos listes personnalisées</p>
-            </div>
-            <div class="acceuilMessage">
-                <label class="label" for="">Enter your username</label>
-                <input id="userName" type="text">
-                <button id="btnAcceuil">Submit</button>
-            </div>
-            <div class="newAcceuil">
-                <h3>Bienvenue</h3>
-            </div>
-            <div class="newAcceuil">
-                <h2 id="userNameH2"></h2>
-            </div>
-            <div class="newAcceuil">
-                <p>Vos listes</p>
-                <ul id="ulLists">
-                    
-                </ul>
-            </div>
-            <div class="newAcceuil">
-                <p>Ajouter une liste</p>
-                <button id="btnAjouter">+</button>
-            </div>
-            <div id="formNewNameList">
-                <label for="">Entrez le nom de votre nouvelle liste</label>
-                <input id="newNameList" type="text">
-                <button id="newNameListBtn">Valider</button>
-                <h3></h3>
-            </div>
-            <div>
-                <h2 id="newNameListH2"></h2>
-            </div>
-            <div class="newParticipants">
-                <label id="labelParticipant" for="">Entrez le nom du participant :</label>
-                <input id="participant" type="text">
-                <button id="btnAddParticipant">+</button>
-            </div>
-            <div class="newParticipants">
-                <ul id="showList">
+            <div class="slider-contenu">
+                    <img id="logoProfil" src="images/icons/001-top-hat.png" alt="">
+                <div class="acceuilMessage">
+                    <p id="accroche">Utilisez cet espace pour enregister vos listes personnalisées</p>
+                </div>
+                <div class="acceuilMessage">
+                    <label class="label" for="">Enter your username</label>
+                    <input id="userName" type="text">
+                    <button id="btnAcceuil">Submit</button>
+                </div>
+                <div class="newAcceuil">
+                    <h3>Bienvenue</h3>
+                </div>
+                <div class="newAcceuil">
+                    <h2 id="userNameH2"></h2>
+                </div>
+                <div class="newAcceuil">
+                    <p>Vos listes</p>
+                    <ul id="ulLists">
 
-                </ul>
-            </div>
-            <div class="newParticipants">
-                <button id="saveListbtn" disabled>Enregistrez votre liste</button>
+                    </ul>
+                </div>
+                <div class="newAcceuil">
+                    <p>Ajouter une liste</p>
+                    <button id="btnAjouter">+</button>
+                </div>
+                <div id="formNewNameList">
+                    <label for="">Entrez le nom de votre nouvelle liste</label>
+                    <input id="newNameList" type="text">
+                    <button id="newNameListBtn">Valider</button>
+                    <h3></h3>
+                </div>
+                <div>
+                    <h2 id="newNameListH2"></h2>
+                </div>
+                <div class="newParticipants">
+                    <label id="labelParticipant" for="">Entrez le nom du participant :</label>
+                    <input id="participant" type="text">
+                    <button id="btnAddParticipant">+</button>
+                </div>
+                <div class="newParticipants">
+                    <ul id="showList">
+
+                    </ul>
+                </div>
+                <div class="newParticipants">
+                    <button id="saveListbtn" disabled>Enregistrez votre liste</button>
+                </div>
             </div>
 
         </div>
@@ -100,13 +78,14 @@
 
     <!-- Site et Fonctionnalités-->
     <main>
-        
-    <!-- Footer de la page -->
-    <footer>
+            <img class="antenne" src="images/steampunk_ecran_antenne.png" alt="">
+    </main>
+        <!-- Footer de la page -->
+        <footer>
 
-    </footer>
-    <script src="main.js"></script>
-    <script src="roue.js"></script>
+        </footer>
+        <script src="main.js"></script>
+        <script src="roue.js"></script>
 </body>
 
 </html>
