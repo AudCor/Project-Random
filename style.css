@@ -91,8 +91,6 @@ nav ul li button {
     transition: transform 0.4s ease-in;
 }
  .sign-slider {
-    background-image: url('/images/CADRE.png');
-    background-repeat: no-repeat;
     z-index: 100;
     position: absolute;
     right: 30px;
@@ -103,10 +101,11 @@ nav ul li button {
     transition: transform 0.4s ease-in;
 }
  .profile-slider {
-    background-color: #393e46;
+    background-image: url('/images/CADREplaceholder.png');
+    background-repeat: no-repeat;
     z-index: 100;
     position: absolute;
-    right: 0px;
+    right: 30px;
     top: 60px;
     height: 92.7vh;
     width: 35vw;
@@ -188,13 +187,15 @@ nav ul li button {
 
 /* main*/
 
-main {
-    display: flex;
-}
 
 #listContainer {
-    width: 30%;
+    width: 250px;
+    height: 600px;
     border: black 5px solid;
+    background-color: #D0D0DC;
+    right: 100px;
+    top: 150px;
+    border-radius: 10px;
 }
 #listContainer ul {
     list-style: none;
