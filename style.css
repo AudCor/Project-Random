@@ -323,3 +323,7 @@ section {
     box-shadow: #222831;
 }
 
+#compteur{
+    width: 200px;
+    height: 100px;
+}

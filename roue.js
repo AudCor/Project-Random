@@ -1,6 +1,7 @@
 window.onload = ()=>{
   updateList();
   checkCookie();
+  showCounter();
 }
 var time = 4000;
 var scrollDistancePerSecond = 1000; // Scroll 1000px every second.
@@ -65,13 +66,23 @@ var choixFinal = null;
 var doNotAdd = false;
 // bouton demarrez
 btn.addEventListener("click", () =>{
+  for (let index = 0; index < realInput.length; index++) {
+    const element = realInput[index];
+    if (element.value === "" || element.value == null) {
+      return alert("un input est vide")
+    }
+  }
   demarrageRoue2();
   addNameOnArray();
   random3();
   btn.disabled = true;
-  griseInputs();
-  
+  griseInputs(); 
 });
+
+
+
+//
+
 
 
 //bouton reinitialiser
@@ -241,6 +252,7 @@ function removeLastDiv() {
     boutonMoins.disabled = true;
     return
   }
+  showCounter();
 }
 
 boutonMoins.addEventListener("click", () => {
@@ -251,7 +263,8 @@ boutonMoins.addEventListener("click", () => {
 //fonction qui ajoute une div dans la roue
 var boutonPLus = document.getElementById("controlPlus");
 function addDivAtTheEnd() {
-  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here"></section>`);
+  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here" maxlength="10"></section>`);
+  showCounter();
 }
 
 boutonPLus.addEventListener("click", () => {
@@ -541,6 +554,12 @@ else if (realInput.length === tableau.length) {
     element.value = element2
   } 
 }
+showCounter();
+}
+
+const compteurH2 = doc.getElementById('compteurH2');
+function showCounter() {
+  compteurH2.innerHTML = `${realInput.length}`
 }
 
 
