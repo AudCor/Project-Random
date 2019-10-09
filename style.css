@@ -76,7 +76,7 @@ nav ul li button:hover {
     transition: 0.3s;
 }
 
-}
+
 /* Bouton de profil temporairement apparent, le temps de faire des réglages */
 .profile-button {
     display: block;
@@ -423,4 +423,10 @@ select {
     width: 150px;
     height: 350px;
     z-index: 0;
+}
+
+/* Compteur */
+#compteur{
+    width: 200px;
+    height: 100px;
 }

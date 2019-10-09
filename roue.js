@@ -1,6 +1,7 @@
 window.onload = ()=>{
   updateList();
   checkCookie();
+  showCounter();
 }
 var time = 4000;
 var scrollDistancePerSecond = 1000; // Scroll 1000px every second.
@@ -65,14 +66,18 @@ var choixFinal = null;
 var doNotAdd = false;
 // bouton demarrez
 btn.addEventListener("click", () =>{
+  for (let index = 0; index < realInput.length; index++) {
+    const element = realInput[index];
+    if (element.value === "" || element.value == null) {
+      return alert("un input est vide")
+    }
+  }
   demarrageRoue2();
   addNameOnArray();
   random3();
   btn.disabled = true;
-  griseInputs();
-  
+  griseInputs(); 
 });
-
 
 //bouton reinitialiser
 const btn2 = document.getElementById("reset-button");
@@ -180,7 +185,7 @@ var elements = document.getElementsByClassName("inputWheelTotal");
 function deleteTextInput() {
     for (let index = 0; index < elements.length; index++) {
         const element = elements[index];
-        element.placeholder = "Input here";
+        element.placeholder = "Input your name here";
         element.value = "";     
     }
 }
@@ -241,6 +246,7 @@ function removeLastDiv() {
     boutonMoins.disabled = true;
     return
   }
+  showCounter();
 }
 
 boutonMoins.addEventListener("click", () => {
@@ -251,7 +257,8 @@ boutonMoins.addEventListener("click", () => {
 //fonction qui ajoute une div dans la roue
 var boutonPLus = document.getElementById("controlPlus");
 function addDivAtTheEnd() {
-  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input here"></section>`);
+  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here" maxlength="10"></section>`);
+  showCounter();
 }
 
 boutonPLus.addEventListener("click", () => {
@@ -403,15 +410,12 @@ var participant = document.getElementById('participant');
 var showList = document.getElementById('showList')
 let saveListbtn = document.getElementById('saveListbtn');
 btnAddParticipant.addEventListener('click', ()=>{
-    if (participant.value != "" && participant.value != null) {
-      
-    
     newPeopleList.push(participant.value)//on rentre les elements dans un array
     var liparticipant = document.createElement('li');
     liparticipant.classList.add('linewList')
     liparticipant.textContent = participant.value
     showList.appendChild(liparticipant);
-    participant.value = "";
+    participant.value = " ";
     var linewList = document.getElementsByClassName('linewList');
     if (linewList.length > 10) {
       btnAddParticipant.disabled = true;
@@ -421,7 +425,6 @@ btnAddParticipant.addEventListener('click', ()=>{
       saveListbtn.disabled = false;
     }  
 console.log(newPeopleList)
-  }
 })
 //fonction qui rajoute un li a liste des listes 
 function createLiList(i) {
@@ -520,8 +523,7 @@ function UpdateWheel(tableau) {
     for (let y = 0; y < realInput.length; y++) {
       const element = realInput[y];
       const element2 = tableau[y];
-      element.value = element2;
-      inputclone0.value = tableau[0];
+      element.value = element2
     } 
   }
 else if (realInput.length < tableau.length) {
@@ -537,7 +539,6 @@ else if (realInput.length < tableau.length) {
     const element = realInput[i];
     const element2 = tableau[i];
     element.value = element2
-    inputclone0.value = tableau[0];
   } 
 }
 else if (realInput.length === tableau.length) {
@@ -545,59 +546,12 @@ else if (realInput.length === tableau.length) {
     const element = realInput[i];
     const element2 = tableau[i];
     element.value = element2
-    inputclone0.value = tableau[0];
   } 
 }
+showCounter();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-    
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
+const compteurH2 = doc.getElementById('compteurH2');
+function showCounter() {
+  compteurH2.innerHTML = `${realInput.length}`
+}
