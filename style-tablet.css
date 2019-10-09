@@ -1,0 +1,445 @@
+/*
+Palette de couleur du site :
+Gris sombre         #222831
+Gris moins sombre   #393e46
+Bleu                #00adb5
+Gris clair          #eeeeee
+rouge               #e23e57
+
+*/
+
+@font-face {
+  font-family: 'celestial';
+  src: url('CelestialFont/celestialfree-webfont.woff2') format('woff2'),
+      url('CelestialFont/celestialfree-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'bolton';
+  src: url('BoltonFont/bolton-webfont.woff2') format('woff2'),
+      url('BoltonFont/bolton-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'bolton';
+}
+
+body {
+  background-image: url('images/Background1.jpg') ;
+  background-size: 1000px;
+  background-repeat: repeat;
+  overflow: hidden;
+}
+
+nav {
+  background-color: rgba(54, 54, 56, 0.452);
+  background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  width: 250px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav ul li button {
+  background-color: #F1CEA8;
+  ;
+  z-index: 100;
+  width: 70px;
+  height: 30px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  transition: 0.3s;
+
+}
+
+nav ul li button:hover {
+  background-color: rgb(245, 189, 130);
+  transition: 0.3s;
+}
+
+
+/* Bouton de profil temporairement apparent, le temps de faire des réglages */
+.profile-button {
+  display: block;
+}
+
+#logo {
+  font-size: 1.8em;
+  margin-left: 1em;
+  color: #F1CEA8;
+  font-family: 'celestial';
+  transition: 0.3s;
+  z-index: 1000;
+
+}
+
+#logo:hover {
+  color: rgb(245, 189, 130);
+  transition: 0.3s;
+}
+
+/*------ Sliders ----------*/
+.zone-slider {
+  height: 608px;
+  width: 470px;
+  position: absolute;
+  right: 0px;
+}
+
+.profile-slider {
+  background-image: url('images/CADRE5.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  height: 100%;
+}
+
+.slider-contenu {
+  width: 80%;
+  height : 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.acceuilLogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+#logoProfil {
+  width: 6em;
+
+}
+.acceuilMessage {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+#accroche {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.label {
+  font-size: 1em;
+  text-align: center;
+}
+
+.showLists {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+#btnAjouter {
+  width: 40px;
+}
+
+.newAcceuil {
+  display: none;
+  justify-content: space-around;
+  width: 50%;
+}
+
+#formNewNameList {
+  display: none;
+}
+
+#btnAddParticipant {
+  width: 40px;
+}
+
+#saveListbtn {
+  margin-top: 5px;
+  font-size: 1.1em;
+  padding: 5px;
+}
+
+.newParticipants {
+  display: none;
+}
+
+#labelParticipant {
+  font-size: 0.8em;
+}
+
+
+.slider-active {
+  transition: 0.2s;
+  transform: translateX(0%);
+}
+
+.slider-closing {
+  transition: transform 0.2s ease-out;
+  transform: translateX(430px);
+
+}
+
+.dark-bg {
+  display: none;
+  z-index: 9;
+  position: absolute;
+  background-color: black;
+  opacity: 0.6;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dark-bg-active {
+  display: block;
+}
+
+/*------ Main site --------*/
+
+/* main*/
+
+
+#listContainer {
+  width: 250px;
+  height: 600px;
+  border: black 5px solid;
+  background-color: #D0D0DC;
+  right: 100px;
+  top: 150px;
+  border-radius: 10px;
+}
+
+#listContainer ul {
+  list-style: none;
+  font-size: 40px;
+}
+
+#controlsButtons {
+  margin-left: 60px;
+  margin-right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spin */
+
+#spin-div {
+  width: 350px;
+  height: 400px;
+  scroll-behavior: smooth;
+  margin-left: 100px;
+  margin-top: 100px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Loop {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.red,
+.rose,
+.yellow,
+.orange {
+  background-color: #F1CEA8;
+  background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+
+}
+
+.green,
+.grey,
+.blue {
+  background-color: #D0D0DC;
+  background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+}
+
+.inputWheel,
+.inputWheelClone {
+  background-color: transparent;
+  ;
+  text-transform: uppercase;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  height: 4.2rem;
+  width: 20rem;
+
+}
+
+@keyframes bordure {
+  0% {
+      background-color: #66FF66;
+  }
+
+  50% {
+      background-color: white
+  }
+
+  100% {
+      background-color: #66FF66;
+  }
+}
+
+
+@keyframes shake {
+  0% {
+      transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+      transform: translate(-1px, -2px) rotate(-2deg);
+  }
+
+  20% {
+      transform: translate(-3px, 0px) rotate(2deg);
+  }
+
+  30% {
+      transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+      transform: translate(1px, -1px) rotate(2deg);
+  }
+
+  50% {
+      transform: translate(-1px, 2px) rotate(-2deg);
+  }
+
+  60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+      transform: translate(3px, 1px) rotate(-2deg);
+  }
+
+  80% {
+      transform: translate(-1px, -1px) rotate(2deg);
+  }
+
+  90% {
+      transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+      transform: translate(1px, -2px) rotate(-2deg);
+  }
+}
+
+
+#spin-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: #393e46;
+  width: 350px;
+  height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.controlSize {
+  width: 40px;
+  height: 100px;
+}
+
+#turn-button,
+#reset-button {
+  width: 250px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#turn-button {
+  background-color: #A6925F;
+  color: white;
+  font-size: 1.5em;
+}
+
+#reset-button {
+  background-color: #D0D0DC;
+  color: white;
+  font-size: 1.5em;
+}
+
+/* pour le formulaire */
+
+#divForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 150px;
+}
+
+#divForm input,
+textarea,
+select {
+  border: #333 solid 1px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  width: 80%;
+}
+
+#divSend {
+  width: 80%;
+  text-align: right;
+}
+
+#divSend button {
+  background-color: grey;
+  color: black;
+  border-radius: 5px;
+  width: 80px;
+  height: 50px;
+  font-size: 10px;
+  box-shadow: #222831;
+}
+
+/* Main */
+.antenne {
+  position: absolute;
+  margin-left: 650px;
+  margin-top: -70px;
+  width: 150px;
+  height: 350px;
+  z-index: 0;
+}
