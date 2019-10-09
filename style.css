@@ -449,3 +449,9 @@ select {
     height: 350px;
     z-index: -100;
 }
+
+/* Compteur */
+#compteur{
+    width: 200px;
+    height: 100px;
+}

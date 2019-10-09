@@ -43,6 +43,7 @@
                 </div> 
             </form>
         </div>
+
         <div class="profile-slider slider-closing">
 
             <div id="acceuilLogo">
@@ -53,7 +54,7 @@
             </div>
             <div class="acceuilMessage">
                 <label class="label" for="">Enter your username</label>
-                <input id="userName" type="text">
+                <input id="userName" type="text" minlength="1" maxlength="12">
                 <button id="btnAcceuil">Submit</button>
             </div>
             <div class="newAcceuil">
@@ -74,7 +75,7 @@
             </div>
             <div id="formNewNameList">
                 <label for="">Entrez le nom de votre nouvelle liste</label>
-                <input id="newNameList" type="text">
+                <input id="newNameList" type="text"  minlength="1" maxlength="12">
                 <button id="newNameListBtn">Valider</button>
                 <h3></h3>
             </div>
@@ -83,7 +84,7 @@
             </div>
             <div class="newParticipants">
                 <label id="labelParticipant" for="">Entrez le nom du participant :</label>
-                <input id="participant" type="text">
+                <input id="participant" type="text" minlength="1" maxlength="12">
                 <button id="btnAddParticipant">+</button>
             </div>
             <div class="newParticipants">
@@ -103,34 +104,34 @@
         <div class="container" id="spin-div">
                 <div id="contentwrapper" class="Loop js-loop">
                         <section id="choice0"  class="green">
-                            <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice1" class="red">
-                          <input id="input1" class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                          <input id="input1" class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice2" class="green">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice3" class="rose">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice4" class="grey">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice5" class="yellow">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice6" class="blue">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice7" class="orange">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice8" class="blue">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section id="choice9" class="yellow">
-                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                       
                         <!--
@@ -138,10 +139,10 @@
                         You need to add clones to fill out a full viewport height.
                         -->
                         <section class="green is-clone">
-                            <input id="inputclone0" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here">
+                            <input id="inputclone0" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                         <section class="red is-clone">
-                            <input id="inputclone1" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here">
+                            <input id="inputclone1" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
                         </section>
                       </div>
 
@@ -154,6 +155,10 @@
           <button id="controlPlus" class="controlSize">+</button>
           <button id="controlMoins" class="controlSize">-</button>
       </div>
+
+        <div id="compteur">
+            <h2 id="compteurH2"></h2>
+        </div>
 
       <div id="listContainer">
           <ul id="winnersList">
