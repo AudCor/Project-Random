@@ -24,7 +24,7 @@
         <div class="profile-slider slider-closing">
 
             <div class="slider-contenu">
-                    <img id="logoProfil" src="images/icons/001-top-hat.png" alt="">
+                <img id="logoProfil" src="images/icons/001-top-hat.png" alt="">
                 <div class="acceuilMessage">
                     <p id="accroche">Utilisez cet espace pour enregister vos listes personnalisées</p>
                 </div>
@@ -80,13 +80,64 @@
     <main>
         <img class="antenne" src="images/steampunk_ecran_antenne.png" alt="">
         
-    </main>
-        <!-- Footer de la page -->
-        <footer>
+        <div class="container" id="spin-div">
+                <img class="ecran" src="images/steampunk_ecran_ecran.png" alt="">
+            <div id="contentwrapper" class="Loop js-loop">
+                <section id="choice0" class="green">
+                    <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice1" class="red">
+                    <input id="input1" class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice2" class="green">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice3" class="rose">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice4" class="grey">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice5" class="yellow">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice6" class="blue">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice7" class="orange">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice8" class="blue">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section id="choice9" class="yellow">
+                    <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
 
-        </footer>
-        <script src="main.js"></script>
-        <script src="roue.js"></script>
+                <!--
+                    These blocks are the same as the first blocks to get that looping illusion going.
+                    You need to add clones to fill out a full viewport height.
+                    -->
+                <section class="green is-clone">
+                    <input id="inputclone0" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+                <section class="red is-clone">
+                    <input id="inputclone1" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                </section>
+            </div>
+
+            <div id="spin-buttons">
+                <button id="turn-button">Tourner la roue !</button>
+                <button id="reset-button">Réinitialiser</button>
+            </div>
+        </div>
+    </main>
+    <!-- Footer de la page -->
+    <footer>
+
+    </footer>
+    <script src="main.js"></script>
+    <script src="roue.js"></script>
 </body>
 
 </html>
