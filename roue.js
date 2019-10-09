@@ -79,12 +79,6 @@ btn.addEventListener("click", () =>{
   griseInputs(); 
 });
 
-
-
-//
-
-
-
 //bouton reinitialiser
 const btn2 = document.getElementById("reset-button");
 function stopAnimation() {
