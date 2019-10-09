@@ -471,3 +471,8 @@ select {
     width: 200px;
     height: 100px;
 }
+/* bouton reset Listes enregistrées */
+#clearLists{
+    background-color: #FF4136;
+    color: #eeeeee;
+}

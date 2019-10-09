@@ -2,7 +2,9 @@ window.onload = ()=>{
   updateList();
   checkCookie();
   showCounter();
+  controlUl();
 }
+var buttonIsDisabled = false;
 var time = 4000;
 var scrollDistancePerSecond = 1000; // Scroll 1000px every second.
 var animation = null;
@@ -23,6 +25,8 @@ const btn = document.getElementById("turn-button");
 var contient = document.getElementById("spin-div");
 
  function demarrageRoue2() {
+   boutonPLus.disabled = true;
+   boutonMoins.disabled = true;
   doNotTurn = false;
   autoScroll();
   document.location = "#choice0";
@@ -88,6 +92,20 @@ function stopAnimation() {
     btn.addEventListener("click",demarrageRoue2); //on remet la fonction demarrageRoue sur le bouton Demarrez    
 }
 
+function reinitialiser() {
+  stopAnimation();
+    location.href = "#choice0";
+    contient.style.animationPlayState = "paused";
+    btn.disabled = false;
+    doNotAdd = false;
+    noms = [];
+    myArray = [];
+    winnersList.innerHTML = "";
+    startStyleInputs();
+    boutonPLus.disabled = false;
+    boutonMoins.disabled = false;
+}
+
 btn2.addEventListener("click", () => {
     stopAnimation();
     location.href = "#choice0";
@@ -99,6 +117,8 @@ btn2.addEventListener("click", () => {
     myArray = [];
     winnersList.innerHTML = "";
     startStyleInputs();
+    boutonPLus.disabled = false;
+    boutonMoins.disabled = false;
 });
 //lutilisateur peut tourner la roue des 2 sens
 var doc = window.document,
@@ -185,7 +205,7 @@ var elements = document.getElementsByClassName("inputWheelTotal");
 function deleteTextInput() {
     for (let index = 0; index < elements.length; index++) {
         const element = elements[index];
-        element.placeholder = "Input your name here";
+        element.placeholder = "Input here";
         element.value = "";     
     }
 }
@@ -242,30 +262,41 @@ var boutonMoins = document.getElementById("controlMoins");
 function removeLastDiv() {
   var contentwrapper = document.getElementById("contentwrapper");
   contentwrapper.removeChild(document.getElementById(`choice${realInput.length - 1}`));
-  if (realInput.length < 3) {//on ne peut pas descendre plus bas que 2 div
-    boutonMoins.disabled = true;
-    return
-  }
   showCounter();
 }
 
 boutonMoins.addEventListener("click", () => {
   removeLastDiv();
   init ();//fonction remet a jour les clones
+  showCounter();
+  if (realInput.length <= 2){
+    boutonMoins.disabled = true;
+    return
+  }
+  else{
+    boutonMoins.disabled = false;
+    boutonPLus.disabled = false;
+  }
 })
 
 //fonction qui ajoute une div dans la roue
 var boutonPLus = document.getElementById("controlPlus");
 function addDivAtTheEnd() {
-  var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here" maxlength="10"></section>`);
-  showCounter();
+ var newInput = document.getElementById(`choice${realInput.length - 1}`).insertAdjacentHTML("afterend",`<section id=choice${realInput.length} class=${choixCouleurs}><input class="inputWheel inputWheelTotal" type="text" placeholder="Input your here" maxlength="10"></section>`);
+ showCounter();
 }
 
 boutonPLus.addEventListener("click", () => {
   colorChoice();
   addDivAtTheEnd();
   init ();//fonction remet a jour les clones
-  if (realInput.length > 2) {//Des quil y a plus de 2 div on reactive le bouton moins
+  showCounter();
+  if (realInput.length >= 20){
+    boutonPLus.disabled = true;
+    return
+  }
+  else {
+    boutonPLus.disabled = false;
     boutonMoins.disabled = false;
   }
 })
@@ -349,15 +380,10 @@ function checkCookie() {
 }
 
 
-//fonction qui efface le message dacceuil
+
 var btnAcceuil = document.getElementById("btnAcceuil");
 var messageAcceuil = document.getElementsByClassName("acceuilMessage");
-btnAcceuil.addEventListener("click", ()=>{
-    for (let index = 0; index < messageAcceuil.length; index++) {
-      const element = messageAcceuil[index];
-      element.style.display = "none";
-    } 
-})
+
 //input userName devient userNameH2
 var userName = document.getElementById("userName")
 var userNameH2 = document.getElementById("userNameH2");
@@ -365,18 +391,33 @@ var newAcceuil = document.getElementsByClassName("newAcceuil");
 userName.addEventListener("input", ()=>{
   userNameH2.textContent = userName.value
 })
-//affichage newAcceuil //enregitrement du username dans les cookies
+//affichage newAcceuil //enregitrement du username dans les cookies //fonction qui efface le message dacceuil
 btnAcceuil.addEventListener('click', ()=> {
-  for (let index = 0; index < newAcceuil.length; index++) {
-    const element = newAcceuil[index];
-    element.style.display = "flex";
-  }
-    var username = userName.value
-  if (username != "" && username != null) {
     
-    setCookie("username", username, 365);
+  if (userName.value != "" && userName.value != null) {
+    
+    for (let index = 0; index < newAcceuil.length; index++) {
+      const element = newAcceuil[index];
+      element.style.display = "flex";
+    }
+    for (let index = 0; index < messageAcceuil.length; index++) {
+      const element = messageAcceuil[index];
+      element.style.display = "none";
+    }
+    setCookie("username", userName.value, 365);
   }
 })
+
+//fonction qui controle la taillle de ul
+function controlUl() {
+  console.log(ulLists.children.length)
+  if (ulLists.children.length >= 6) {
+    btnAjouter.disabled = true;
+  }
+  else{
+    btnAjouter.disabled = false;
+  }
+}
 //affichage input NewnameList
 var btnAjouter = document.getElementById('btnAjouter');
 var formNewNameList = document.getElementById('formNewNameList');
@@ -396,12 +437,14 @@ newNameList.addEventListener("input", ()=>{
 var newNameListBtn = document.getElementById('newNameListBtn');
 var newParticipants = document.getElementsByClassName("newParticipants");
 newNameListBtn.addEventListener('click', ()=>{
-  formNewNameList.style.display ="none";
+  if  (newNameList.value != "" && newNameList.value != null){
+    formNewNameList.style.display ="none";
   newNameListBtn.disabled = true;
   for (let index = 0; index < newParticipants.length; index++) {
     const element = newParticipants[index];
     element.style.display = "flex"; 
   }
+  } 
 })
 //creation li pour chaque participants
 let newPeopleList = [];
@@ -410,25 +453,27 @@ var participant = document.getElementById('participant');
 var showList = document.getElementById('showList')
 let saveListbtn = document.getElementById('saveListbtn');
 btnAddParticipant.addEventListener('click', ()=>{
+  if(participant.value != "" && participant.value != null){
     newPeopleList.push(participant.value)//on rentre les elements dans un array
     var liparticipant = document.createElement('li');
     liparticipant.classList.add('linewList')
     liparticipant.textContent = participant.value
     showList.appendChild(liparticipant);
-    participant.value = " ";
+    participant.value = "";
     var linewList = document.getElementsByClassName('linewList');
-    if (linewList.length > 10) {
+    if (linewList.length > 9) {
       btnAddParticipant.disabled = true;
         return
     }
     if (linewList.length >= 2) {
       saveListbtn.disabled = false;
     }  
-console.log(newPeopleList)
+    console.log(newPeopleList)
+  }
 })
 //fonction qui rajoute un li a liste des listes 
+var ulLists = document.getElementById('ulLists');
 function createLiList(i) {
-  var ulLists = document.getElementById('ulLists');
     var liVoslists = document.createElement('li');
     var btnList = document.createElement('button');
     var resto = localStorage.getItem(i);
@@ -440,10 +485,13 @@ function createLiList(i) {
     liVoslists.appendChild(btnList);
     ulLists.appendChild(liVoslists);
     btnList.addEventListener('click',()=>{
-      UpdateWheel(arrayCorrespondant)
-      console.log(arrayCorrespondant)
-    })
-    
+      UpdateWheel(arrayCorrespondant);
+      console.log(arrayCorrespondant);
+      reinitialiser();
+      if (realInput.length <= 2){
+        boutonMoins.disabled = true;
+      }
+    })  
 }
 // creer un objet avec la nouvelle liste et envoyer objet dans le localStorage
 var obj = {};
@@ -456,7 +504,6 @@ saveListbtn.addEventListener('click', ()=>{
   if (localStorage.getItem("myList0")) {
     var varPourcreatList = `myList${longueurLocalStorage}`;
     localStorage.setItem(varPourcreatList, JSON.stringify(obj));
-    
     createLiList(varPourcreatList);
     
   }
@@ -478,6 +525,7 @@ saveListbtn.addEventListener('click', ()=>{
     const element = newParticipants[index];
     element.style.display = "none"; 
   }
+  controlUl();
 })
 //update la listes des listes crees au reload de la page
 var nomsData = []
@@ -490,22 +538,24 @@ function updateList() {
     var btnLists = document.createElement('button');
     var arrayCorrespondant = Object.values(JSON.parse(resto));
     btnLists.textContent = titreList;
-    btnLists.id = `myList${i}`;
-    btnLists.className = "boutonsListes"
+    liVoslists.id = localStorage.key(i);
+    btnLists.className = "boutonsListes";
     btnLists.setAttribute("title", arrayCorrespondant[0])
     liVoslists.appendChild(btnLists);
     ulLists.appendChild(liVoslists);
  }
  var boutonsListes = document.getElementsByClassName("boutonsListes");
-
     for (let index = 0; index < boutonsListes.length; index++) {
       const element = boutonsListes[index];
       element.addEventListener('click', ()=>{
         var arrayist = Object.values(JSON.parse(localStorage.getItem(localStorage.key(index))))[0];
-        UpdateWheel(arrayist);
-
+        UpdateWheel(arrayist); 
+        reinitialiser();
+        if (realInput.length <= 2){
+          boutonMoins.disabled = true;
+        }
       })
-    }
+    }   
 }
 
 //mise a jour div dans la roue 
@@ -516,14 +566,13 @@ function UpdateWheel(tableau) {
       removeLastDiv();
       if (realInput.length === tableau.length) {
         init();
-      
-      }
-      
+      }  
     }
     for (let y = 0; y < realInput.length; y++) {
       const element = realInput[y];
       const element2 = tableau[y];
-      element.value = element2
+      element.value = element2;
+      inputclone0.value = tableau[0];
     } 
   }
 else if (realInput.length < tableau.length) {
@@ -532,13 +581,13 @@ else if (realInput.length < tableau.length) {
     addDivAtTheEnd();
     if (realInput.length === tableau.length) {
       init();
-    
     }
   }
   for (let i = 0; i < realInput.length; i++) {
     const element = realInput[i];
     const element2 = tableau[i];
     element.value = element2
+    inputclone0.value = tableau[0];
   } 
 }
 else if (realInput.length === tableau.length) {
@@ -546,12 +595,19 @@ else if (realInput.length === tableau.length) {
     const element = realInput[i];
     const element2 = tableau[i];
     element.value = element2
+    inputclone0.value = tableau[0];
   } 
 }
 showCounter();
 }
-
 const compteurH2 = doc.getElementById('compteurH2');
 function showCounter() {
   compteurH2.innerHTML = `${realInput.length}`
 }
+
+//suppression de tt les listes enregistrés
+const btnClearLists = doc.getElementById('clearLists');
+btnClearLists.addEventListener('click',()=>{
+  ulLists.innerHTML = "";
+  localStorage.clear();
+})
