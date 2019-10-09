@@ -56,7 +56,7 @@ nav ul {
 
 nav ul li button {
     background-color: #F1CEA8;
-    z-index: 100;
+    z-index: 110;
     width: 70px;
     height: 30px;
     border: none;
@@ -93,7 +93,7 @@ nav ul li button:hover {
 .profile-slider {
     background-image: url('/images/CADRE5.png');
     background-repeat: no-repeat;
-    z-index: 100;
+    z-index: 110;
     position: absolute;
     right: 30px;
     top: 60px;
@@ -185,7 +185,7 @@ nav ul li button:hover {
 
 #btnAcceuil {
     background-color: #F1CEA8;
-    z-index: 100;
+    z-index: 110;
     width: 60px;
     height: 20px;
     border: none;
@@ -212,7 +212,7 @@ nav ul li button:hover {
 
 .dark-bg {
     display: none;
-    z-index: 9;
+    z-index: 100;
     position: absolute;
     background-color: black;
     opacity: 0.6;
@@ -254,15 +254,29 @@ nav ul li button:hover {
 
 /* Spin */
 
+
+
 #spin-div {
-    width: 350px;
-    height: 400px;
+    position: absolute;
+    width: 400px;
+    height: 370px;
+    left: 37%;
+    top: 30%;
     scroll-behavior: smooth;
-    margin-left: 100px;
-    margin-top: 100px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
+.ecran {
+    position: absolute;
+    left: -70%;
+    top: -50%;
+    height: 600px;
+    width: 900px;
+    z-index: 90;
+    pointer-events: none;
+}
+
 
 
 section {
@@ -298,13 +312,14 @@ section {
 .inputWheel,
 .inputWheelClone {
     background-color: transparent;
-    z-index: 100;
+    z-index: 50;
     text-transform: uppercase;
     font-size: 26px;
     text-transform: uppercase;
     text-align: center;
     height: 4.2rem;
     width: 20rem;
+    border: solid black;
 
 }
 
@@ -375,7 +390,6 @@ section {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    background-color: #393e46;
     width: 350px;
     height: 200px;
     border-bottom-left-radius: 5px;
@@ -440,6 +454,7 @@ select {
     height: 50px;
     font-size: 10px;
     box-shadow: #222831;
+    border: none;
 }
 .antenne {
     position: absolute;
@@ -449,6 +464,7 @@ select {
     height: 350px;
     z-index: -100;
 }
+
 
 /* Compteur */
 #compteur{
