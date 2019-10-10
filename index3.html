@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css" media="screen and (min-width: 769px)"">
+    <link rel="stylesheet" href="style-mobile.css" media="screen and (max-width: 768px)">
+    <title>Project Random</title>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header>
+
+        <nav>
+            <h1 id="logo">RANDOMATOR</h1>
+            <ul>
+                <li><button class="profile-button" onclick="profileButton()">Profil</button></li>
+            </ul>
+        </nav>
+        <div class="dark-bg" onclick="bgDarkAway()"></div>
+
+        <div class="profile-slider slider-closing">
+
+            <div class="slider-contenu">
+                <img id="logoProfil" src="images/icons/001-top-hat.png" alt="">
+                <div class="acceuilMessage">
+                    <p id="accroche">Utilisez cet espace pour enregister vos listes personnalisées</p>
+                </div>
+                <div class="acceuilMessage">
+                    <label class="label" for="">Enter your username</label>
+                    <input id="userName" type="text">
+                    <button id="btnAcceuil">Submit</button>
+                </div>
+                <div class="newAcceuil">
+                    <h3>Bienvenue</h3>
+                </div>
+                <div class="newAcceuil">
+                    <h2 id="userNameH2"></h2>
+                </div>
+                <div class="newAcceuil">
+                    <p>Vos listes</p>
+                    <ul id="ulLists">
+
+                    </ul>
+                </div>
+                <div class="newAcceuil">
+                    <p>Ajouter une liste</p>
+                    <button id="btnAjouter">+</button>
+                </div>
+                <div id="formNewNameList">
+                    <label for="">Entrez le nom de votre nouvelle liste</label>
+                    <input id="newNameList" type="text">
+                    <button id="newNameListBtn">Valider</button>
+                    <h3></h3>
+                </div>
+                <div>
+                    <h2 id="newNameListH2"></h2>
+                </div>
+                <div class="newParticipants">
+                    <label id="labelParticipant" for="">Entrez le nom du participant :</label>
+                    <input id="participant" type="text">
+                    <button id="btnAddParticipant">+</button>
+                </div>
+                <div class="newParticipants">
+                    <ul id="showList">
+
+                    </ul>
+                </div>
+                <div class="newParticipants">
+                    <button id="saveListbtn" disabled>Enregistrez votre liste</button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Site et Fonctionnalités-->
+    <main>
+            <img class="antenne" src="images/steampunk_ecran_antenne.png" alt="">
+    </main>
+        <!-- Footer de la page -->
+        <footer>
+
+        </footer>
+        <script src="main.js"></script>
+        <script src="roue.js"></script>
+</body>
+
+</html>

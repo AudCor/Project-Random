@@ -204,7 +204,7 @@
   
   .slider-closing {
     transition: transform 0.2s ease-out;
-    transform: translateX(92%);
+    transform: translateX(100%);
   }
   
   #usernameMessage {

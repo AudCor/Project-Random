@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css media="screen and (min-width: 769px)">
+    <link rel="stylesheet" href="style-tablet.css"screen and (max-width: 768px) and (min-width: 576px)">
+    <link rel="stylesheet" href="css tablet (provisoire)/volet.css"screen and (max-width: 768px) and (min-width: 576px)">
+    <link rel="stylesheet" href="css tablet (provisoire)/compteur.css"screen and (max-width: 768px) and (min-width: 576px)">
+    <link rel="stylesheet" href="css tablet (provisoire)/resultat-roue.css"screen and (max-width: 768px) and (min-width: 576px)">
+    <link rel="stylesheet" href="css tablet (provisoire)/roue.css"screen and (max-width: 768px) and (min-width: 576px)">
+
+    <title>Project Random</title>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header>
+
+        <nav>
+            <h1 id="logo">RANDOMATOR</h1>
+            <ul>
+                <!--<li><button class="sign-button" onclick="signButton()">Inscription</button></li>
+                <li><button class="log-button" onclick="loginButton()">Connexion</button></li>-->
+                <li><button class="profile-button" onclick="profileButton()">Profil</button></li>
+            </ul>
+        </nav>
+        <div class="dark-bg" onclick="bgDarkAway()"></div>
+<!--
+        <div class="sign-slider slider-closing">
+            <form>
+                <div id="divForm">
+                    <input type="text" placeholder="Prénom">
+                    <input type="text" placeholder="Identifiant">
+                    <input type="email" placeholder="@">
+                    <input type="password" placeholder="Mot de passe">
+                    <div id="divSend"><button>Submit !</button></div>
+                </div> 
+            </form>
+        </div>
+        <div class="log-slider slider-closing">
+            <form>
+                <div id="divForm">
+                    <input type="text" placeholder="Identifiant">
+                    <input type="password" placeholder="Mot de passe">
+                    <div id="divSend"><button>Submit !</button></div>
+                </div> 
+            </form>
+        </div>
+    -->
+        <div class="zone-slider">
+        <div class="profile-slider slider-closing">
+
+            <div id="acceuilLogo">
+                <img id="logoProfil" src="images/icons/001-top-hat.png" alt="">
+            </div>
+            <div class="acceuilMessage">
+                <p id="accroche">Utilisez cet espace pour enregister vos listes personnalisées</p>
+            </div>
+            <div class="acceuilMessage">
+                <label class="label" for="">Enter your username</label>
+                <input id="userName" type="text" minlength="1" maxlength="12">
+                <button id="btnAcceuil">Submit</button>
+            </div>
+            <div class="newAcceuil">
+                <h3>Bienvenue</h3>
+            </div>
+            <div class="newAcceuil">
+                <h2 id="userNameH2"></h2>
+            </div>
+            <div class="newAcceuil">
+                <p>Vos listes</p>
+                <ul id="ulLists">
+                    
+                </ul>
+            </div>
+            <div class="newAcceuil">
+                <p>Ajouter une liste</p>
+                <button id="btnAjouter">+</button>
+            </div>
+            <div id="formNewNameList">
+                <label for="">Entrez le nom de votre nouvelle liste</label>
+                <input id="newNameList" type="text"  minlength="1" maxlength="12">
+                <button id="newNameListBtn">Valider</button>
+                <h3></h3>
+            </div>
+            <div>
+                <h2 id="newNameListH2"></h2>
+            </div>
+            <div class="newParticipants">
+                <label id="labelParticipant" for="">Entrez le nom du participant :</label>
+                <input id="participant" type="text" minlength="1" maxlength="12">
+                <button id="btnAddParticipant">+</button>
+            </div>
+            <div class="newParticipants">
+                <ul id="showList">
+
+                </ul>
+            </div>
+            <div class="newParticipants">
+                <button id="saveListbtn" disabled>Enregistrez votre liste</button>
+            </div>
+
+        </div>
+    </div>
+    </header>
+
+    <!-- Site et Fonctionnalités-->
+    <main>
+        <div class="container" id="spin-div">
+                <div id="contentwrapper" class="Loop js-loop">
+                        <section id="choice0"  class="green">
+                            <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice1" class="red">
+                          <input id="input1" class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice2" class="green">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input your name here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice3" class="rose">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice4" class="grey">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice5" class="yellow">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice6" class="blue">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice7" class="orange">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice8" class="blue">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section id="choice9" class="yellow">
+                            <input class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                      
+                        <!--
+                        These blocks are the same as the first blocks to get that looping illusion going.
+                        You need to add clones to fill out a full viewport height.
+                        -->
+                        <section class="green is-clone">
+                            <input id="inputclone0" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                        <section class="red is-clone">
+                            <input id="inputclone1" class="inputWheelClone inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
+                        </section>
+                      </div>
+
+                      <div id="spin-buttons">
+                            <button id="turn-button">Tourner la roue !</button>
+                            <button id="reset-button">Réinitialiser</button>
+                        </div>
+        </div>
+      <div id="controlsButtons">
+          <button id="controlPlus" class="controlSize">+</button>
+          <button id="controlMoins" class="controlSize">-</button>
+      </div>
+
+        <div id="compteur">
+            <h2 id="compteurH2"></h2>
+        </div>
+
+      <div id="listContainer">
+          <ul id="winnersList">
+          </ul>
+      </div>
+    </main>
+
+    <!-- Footer de la page -->
+    <footer>
+
+    </footer>
+    <script src="main.js"></script>
+    <script src="roue.js"></script>
+</body>
+
+</html>

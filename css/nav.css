@@ -69,6 +69,9 @@
 /* Smartphone */
 @media screen and (max-width: 576px) {
 nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     background-color: rgba(54, 54, 56, 0.452);
     background-image: url("https://transparenttextures.com/patterns/black-felt.png");
     height: 45px;
@@ -77,8 +80,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding-right: 10px;
-    position: absolute;
-    top: 0px;
 }
 
 nav ul {
