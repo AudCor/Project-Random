@@ -2,114 +2,116 @@
 
 @media screen and (min-width: 769px) {
 
-  nav {
-    background-color: rgba(54, 54, 56, 0.452);
-    background-image: url("https://transparenttextures.com/patterns/black-felt.png");
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
+    nav {
+        background-color: rgba(54, 54, 56, 0.452);
+        background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    nav ul li button {
+        background-color: #F1CEA8;
+        z-index: 110;
+        width: 70px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: black;
+        transition: 0.3s;
+
+    }
+
+    nav ul li button:hover {
+        background-color: rgb(245, 189, 130);
+        transition: 0.3s;
+    }
+
+    #logo {
+        font-size: 3.5em;
+        margin-left: 1em;
+        color: #F1CEA8;
+        font-family: 'celestial';
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    #logo:hover {
+        color: rgb(245, 189, 130);
+        transition: 0.3s;
+    }
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-nav ul li button {
-  background-color: #F1CEA8;
-  z-index: 110;
-  width: 70px;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: black;
-  transition: 0.3s;
-
-}
-
-nav ul li button:hover {
-  background-color: rgb(245, 189, 130);
-  transition: 0.3s;
-}
-
-  #logo {
-    font-size: 3.5em;
-    margin-left: 1em;
-    color: #F1CEA8;
-    font-family: 'celestial';
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-#logo:hover {
-    color: rgb(245, 189, 130);
-    transition: 0.3s;
-}
-}
 /* Fin Desktop */
 
 /* -------------------------------------------------------------------------- */
 
 /* Tablet */
 @media screen and (min-width: 577px) and (max-width: 768px) {
-  nav {
-  background-color: rgba(54, 54, 56, 0.452);
-  background-image: url("https://transparenttextures.com/patterns/black-felt.png");
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 20px;
-}
+    nav {
+        background-color: rgba(54, 54, 56, 0.452);
+        background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+    }
 
-nav ul {
-  margin-right: 5%;
-  list-style: none;
-/*  width: 250px;
+    nav ul {
+        margin-right: 5%;
+        list-style: none;
+        /*  width: 250px;
   display: flex;
   justify-content: space-evenly; 
   align-items: center;*/
+    }
+
+    nav ul li button {
+        background-color: #F1CEA8;
+        z-index: 110;
+        width: 70px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: black;
+        transition: 0.3s;
+
+    }
+
+    nav ul li button:hover {
+        background-color: rgb(245, 189, 130);
+        transition: 0.3s;
+    }
+
+    #logo {
+        font-size: 1.5em;
+        margin-left: 1em;
+        color: #F1CEA8;
+        font-family: 'celestial';
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    #logo:hover {
+        color: rgb(245, 189, 130);
+        transition: 0.3s;
+    }
+
+    .profile-button {
+        display: block;
+    }
 }
 
-nav ul li button {
-  background-color: #F1CEA8;
-  z-index: 110;
-  width: 70px;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: black;
-  transition: 0.3s;
-
-}
-
-nav ul li button:hover {
-  background-color: rgb(245, 189, 130);
-  transition: 0.3s;
-}
-
-#logo {
-  font-size: 1.5em;
-  margin-left: 1em;
-  color: #F1CEA8;
-  font-family: 'celestial';
-  transition: 0.3s;
-  z-index: 1000;
-}
-
-#logo:hover {
-  color: rgb(245, 189, 130);
-  transition: 0.3s;
-}
-
-.profile-button {
-  display: block;
-}
-}
 /* Fin Tablet */
 
 
@@ -118,20 +120,20 @@ nav ul li button:hover {
 
 /* Smartphone */
 @media screen and (max-width: 576px) {
-  body {
-      background-image: url('../images/Background1.jpg') ;
-      background-size: 1000px;
-      background-repeat: repeat;
-      overflow: hidden;
+    body {
+        background-image: url('../images/Background1.jpg');
+        background-size: 1000px;
+        background-repeat: repeat;
+        overflow: hidden;
     }
-  
-  }
+
+}
+
 /* Fin Smartphone */
 
 /* -------------------------------------------------------------------------- */
 
 /* Smartphone */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {}
 
-  }
 /* Fin Smartphone */
