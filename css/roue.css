@@ -39,6 +39,10 @@
         pointer-events: none;
     }
 
+    .ecran-smartphone {
+        display: none;
+    }
+
     .antenne {
         position: absolute;
         margin-left: 70px;
@@ -212,7 +216,7 @@
         top: 45px;
     }
 
-    .ecran {
+    .ecran-smartphone {
         position: absolute;
         top: 0vw;
         left: -27%;
@@ -222,6 +226,10 @@
         z-index: 90;
         pointer-events: none;
     } 
+
+    .ecran {
+        display: none;
+    }
 
     .antenne {
         position: absolute;
