@@ -1,0 +1,79 @@
+/*
+Palette de couleur du site :
+Gris sombre         #222831
+Gris moins sombre   #393e46
+Bleu                #00adb5
+Gris clair          #eeeeee
+rouge               #e23e57
+
+*/
+
+@font-face {
+    font-family: 'celestial';
+    src: url('../CelestialFont/celestialfree-webfont.woff2') format('woff2'),
+        url('../CelestialFont/celestialfree-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bolton';
+    src: url('../BoltonFont/bolton-webfont.woff2') format('woff2'),
+        url('../BoltonFont/bolton-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'bolton';
+}
+
+.dark-bg {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+    height: 92.7vh;
+    width: 100%;
+}
+
+.dark-bg-active {
+    display: block;
+}
+
+#controlsButtons {
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 769px) {
+body {
+    background-image: url('../images/Background1.jpg');
+    overflow-x: hidden;
+}
+}
+/* Fin Desktop */
+
+/* -------------------------------------------------------------------------- */
+
+/* tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    body {
+        background-image: url('../images/Background1.jpg') ;
+        background-size: 1000px;
+        background-repeat: repeat;
+        overflow: hidden;
+      }
+    }
+/* Fin Tablet */

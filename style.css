@@ -35,21 +35,19 @@ rouge               #e23e57
 
 body {
     background-image: url('images/Background1.jpg');
-    background-size: 100%;
     overflow-x: hidden;
 }
 
 nav {
     background-color: rgba(54, 54, 56, 0.452);
     background-image: url("https://transparenttextures.com/patterns/black-felt.png");
-    ;
     height: 60px;
     display: flex;
     justify-content: space-between;
 }
 
 nav ul {
-    width: 250px;
+    margin-right: 5%;
     list-style: none;
     display: flex;
     justify-content: space-evenly;
@@ -58,10 +56,13 @@ nav ul {
 
 nav ul li button {
     background-color: #F1CEA8;
+<<<<<<< HEAD
     z-index: 100;
+=======
+    z-index: 110;
+>>>>>>> fcdef81d3bbeeef5d5123515f761086128fa5935
     width: 70px;
     height: 30px;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -74,13 +75,8 @@ nav ul li button:hover {
     background-color: rgb(245, 189, 130);
     transition: 0.3s;
 }
-
-}
 /* Bouton de profil temporairement apparent, le temps de faire des réglages */
-.profile-button {
-    display: block;
 
-}
 
 #logo {
     font-size: 3.5em;
@@ -99,30 +95,48 @@ nav ul li button:hover {
 /*------ Sliders ----------*/
 
 .profile-slider {
-    background-image: url('/images/CADREplaceholder.png');
+    background-image: url('/images/CADRE5.png');
     background-repeat: no-repeat;
-    z-index: 100;
+    z-index: 110;
     position: absolute;
     right: 30px;
     top: 60px;
     height: 92.7vh;
-    width: 35vw;
+    width: 470px;
     transform: translateX(100%);
-    transition: transform 0.4s ease-in;
-    
-
-}
-
-.slider-contenu {
+    transition: transform 0.2s ease-in;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 300px;
+    
 }
+
+.slider-contenu {
+    margin-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 360px;
+    height: 500px;
+}
+
+#usernameMessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 20%;
+    background-color: rgba(241, 206, 168, 0.4);
+    border-radius: 10px;
+}
+
 
 #logoProfil {
     width: 6em;
+    margin-top: -10%;
 }
 
 #accroche {
@@ -173,10 +187,26 @@ nav ul li button:hover {
     font-size: 0.8em;
 }
 
+#btnAcceuil {
+    background-color: #F1CEA8;
+    z-index: 110;
+    width: 60px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+}
+
+#btnAcceuil:hover {
+    background-color: rgb(245, 189, 130);
+    transition: 0.3s;
+}
 
 .slider-active {
     transition: 0.2s;
-    transform: translateX(15%);
+    transform: translateX(7%);
 }
 
 .slider-closing {
@@ -186,12 +216,12 @@ nav ul li button:hover {
 
 .dark-bg {
     display: none;
-    z-index: 9;
+    z-index: 100;
     position: absolute;
     background-color: black;
     opacity: 0.6;
-    height: 100vh;
-    width: 100vw;
+    height: 92.7vh;
+    width: 100%;
 }
 
 .dark-bg-active {
@@ -228,15 +258,29 @@ nav ul li button:hover {
 
 /* Spin */
 
+
+
 #spin-div {
-    width: 350px;
-    height: 400px;
+    position: absolute;
+    width: 400px;
+    height: 370px;
+    left: 37%;
+    top: 30%;
     scroll-behavior: smooth;
-    margin-left: 100px;
-    margin-top: 100px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
+.ecran {
+    position: absolute;
+    left: -70%;
+    top: -50%;
+    height: 600px;
+    width: 900px;
+    z-index: 90;
+    pointer-events: none;
+}
+
 
 
 section {
@@ -272,12 +316,17 @@ section {
 .inputWheel,
 .inputWheelClone {
     background-color: transparent;
+<<<<<<< HEAD
+=======
+    z-index: 50;
+>>>>>>> fcdef81d3bbeeef5d5123515f761086128fa5935
     text-transform: uppercase;
     font-size: 26px;
     text-transform: uppercase;
     text-align: center;
     height: 4.2rem;
     width: 20rem;
+    border: solid black;
 
 }
 
@@ -347,8 +396,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: column;
-    background-color: #393e46;
     width: 350px;
     height: 200px;
     border-bottom-left-radius: 5px;
@@ -413,12 +460,32 @@ select {
     height: 50px;
     font-size: 10px;
     box-shadow: #222831;
+    border: none;
 }
 .antenne {
     position: absolute;
+<<<<<<< HEAD
     left: 43%;
+=======
+    left: 45%;
+>>>>>>> fcdef81d3bbeeef5d5123515f761086128fa5935
     top: -10%;
     width: 150px;
     height: 350px;
     z-index: -100;
+<<<<<<< HEAD
+=======
+}
+
+
+/* Compteur */
+#compteur{
+    width: 200px;
+    height: 100px;
+}
+/* bouton reset Listes enregistrées */
+#clearLists{
+    background-color: #FF4136;
+    color: #eeeeee;
+>>>>>>> fcdef81d3bbeeef5d5123515f761086128fa5935
 }
