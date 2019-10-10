@@ -77,3 +77,15 @@ body {
       }
     }
 /* Fin Tablet */
+
+
+/* tablet */
+@media screen and (max-width: 576px) {
+    body {
+        background-image: url('../images/Background1.jpg') ;
+        background-size: 1000px;
+        background-repeat: repeat;
+        overflow: hidden;
+      }
+    }
+/* Fin Tablet */
