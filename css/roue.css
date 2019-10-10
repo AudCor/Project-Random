@@ -177,23 +177,23 @@ section {
   }
   /* Fin Desktop */
 
-/* -------------------------------------------------------------------------- */
 
+  
 /* Tablet */
 @media screen and (min-width: 577px) and (max-width: 768px) {
 
 #spin-div {
   position: absolute;
-  width: 400px;
-  height: 370px;
-  left: 37%;
+  width: 250px;
+  height: 210px;
+  left: 35%;
   top: 30%;
   scroll-behavior: smooth;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-/* 
+/*
 
 #spin-div {
   width: 350px;
@@ -207,19 +207,19 @@ section {
 .ecran {
   position: absolute;
   left: -45%;
-  top: -50%;
-  height: 350px;
-  width: 525px;
+  top: -110%;
+  height: 300px;
+  width: 500px;
   z-index: 90;
   pointer-events: none;
 }
 
 .antenne {
     position: absolute;
-    margin-left: 650px;
-    margin-top: -70px;
-    width: 150px;
-    height: 350px;
+    margin-left: 400px;
+    margin-top: -250px;
+    width: 70px;
+    height: 200px;
   z-index: -100;
 }
 
@@ -263,6 +263,7 @@ section {
     height: 4.2rem;
     width: 20rem;
     border: solid black;
+
 }
 
 @keyframes bordure {
@@ -330,8 +331,8 @@ section {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    background-color: #393e46;
-    width: 350px;
+    background-color: transparent;
+    width: 250px;
     height: 200px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -344,7 +345,7 @@ section {
 
 #turn-button,
 #reset-button {
-  width: 250px;
+  width: 180px;
   height: 50px;
   border: none;
   border-radius: 5px;
@@ -365,3 +366,192 @@ section {
 
 }
 /* Fin Tablet */
+
+
+/* -------------------------------------------------------------------------- */
+
+/* Smartphone */
+@media screen and (max-width: 576px) {
+    #spin-div {
+        position: absolute;
+        width: 400px;
+        height: 370px;
+        left: 37%;
+        top: 30%;
+        scroll-behavior: smooth;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      
+      /* 
+      
+      #spin-div {
+        width: 350px;
+        height: 400px;
+        margin-left: 100px;
+        margin-top: 100px;
+      }
+      */
+      
+      
+      .ecran {
+        position: absolute;
+        top: -50%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 350px;
+        width: 525px;
+        z-index: 90;
+        pointer-events: none;
+      }
+      
+      .antenne {
+          position: absolute;
+          margin-left: 650px;
+          margin-top: -70px;
+          width: 150px;
+          height: 350px;
+        z-index: -100;
+      }
+      
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      
+      .Loop {
+        position: relative;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .red,
+      .rose,
+      .yellow,
+      .orange {
+        background-color: #F1CEA8;
+        background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+      }
+      
+      .green,
+      .grey,
+      .blue {
+          background-color: #D0D0DC;
+          background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+      }
+      
+      .inputWheel,
+      .inputWheelClone {
+          background-color: transparent;
+          z-index: 50;
+          text-transform: uppercase;
+          font-size: 26px;
+          text-transform: uppercase;
+          text-align: center;
+          height: 4.2rem;
+          width: 20rem;
+          border: solid black;
+      }
+      
+      @keyframes bordure {
+        0% {
+            background-color: #66FF66;
+        }
+      
+        50% {
+            background-color: white
+        }
+      
+        100% {
+            background-color: #66FF66;
+        }
+      }
+      
+      @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+      
+        10% {
+            transform: translate(-1px, -2px) rotate(-2deg);
+        }
+      
+        20% {
+            transform: translate(-3px, 0px) rotate(2deg);
+        }
+      
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
+        }
+      
+        40% {
+            transform: translate(1px, -1px) rotate(2deg);
+        }
+      
+        50% {
+            transform: translate(-1px, 2px) rotate(-2deg);
+        }
+      
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+      
+        70% {
+            transform: translate(3px, 1px) rotate(-2deg);
+        }
+      
+        80% {
+            transform: translate(-1px, -1px) rotate(2deg);
+        }
+      
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+      
+        100% {
+            transform: translate(1px, -2px) rotate(-2deg);
+        }
+      }
+      
+      #spin-buttons {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-direction: column;
+          background-color: #393e46;
+          width: 350px;
+          height: 200px;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      
+      .controlSize {
+        width: 40px;
+        height: 100px;
+      }
+      
+      #turn-button,
+      #reset-button {
+        width: 250px;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      #turn-button {
+        background-color: #A6925F;
+        color: white;
+        font-size: 1.5em;
+      }
+      
+      #reset-button {
+        background-color: #D0D0DC;
+        color: white;
+        font-size: 1.5em;
+      }
+}
+/* Fin Smartphone */

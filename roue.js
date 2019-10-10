@@ -489,6 +489,7 @@ function createLiList(i) {
     btnList.addEventListener('click',()=>{
       UpdateWheel(arrayCorrespondant);
       console.log(arrayCorrespondant);
+      bgDarkAway();
       reinitialiser();
       if (realInput.length <= 2){
         boutonMoins.disabled = true;
@@ -552,6 +553,7 @@ function updateList() {
       element.addEventListener('click', ()=>{
         var arrayist = Object.values(JSON.parse(localStorage.getItem(localStorage.key(index))))[0];
         UpdateWheel(arrayist); 
+        bgDarkAway();
         reinitialiser();
         if (realInput.length <= 2){
           boutonMoins.disabled = true;

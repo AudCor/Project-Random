@@ -78,8 +78,10 @@ body {
     }
 /* Fin Tablet */
 
+/* -------------------------------------------------------------------------- */
 
-/* tablet */
+
+/* Smartphone */
 @media screen and (max-width: 576px) {
     body {
         background-image: url('../images/Background1.jpg') ;
@@ -87,5 +89,6 @@ body {
         background-repeat: repeat;
         overflow: hidden;
       }
+    
     }
-/* Fin Tablet */
+/* Fin Smartphone */
