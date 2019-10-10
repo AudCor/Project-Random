@@ -113,3 +113,26 @@ nav ul li button:hover {
 }
 /* Fin Tablet */
 
+
+/* -------------------------------------------------------------------------- */
+
+
+/* Smartphone */
+@media screen and (max-width: 576px) {
+  body {
+      background-image: url('../images/Background1.jpg') ;
+      background-size: 1000px;
+      background-repeat: repeat;
+      overflow: hidden;
+    }
+  
+  }
+/* Fin Smartphone */
+
+/* -------------------------------------------------------------------------- */
+
+/* Smartphone */
+@media screen and (max-width: 576px) {
+
+  }
+/* Fin Smartphone */

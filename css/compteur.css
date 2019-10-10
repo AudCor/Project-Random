@@ -3,3 +3,12 @@
   width: 200px;
   height: 100px;
 }
+
+
+/* -------------------------------------------------------------------------- */
+
+/* Smartphone */
+@media screen and (max-width: 576px) {
+
+}
+/* Fin Smartphone */
