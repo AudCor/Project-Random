@@ -193,6 +193,17 @@ section {
   border-top-right-radius: 5px;
 }
 
+/* 
+
+#spin-div {
+  width: 350px;
+  height: 400px;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+*/
+
+
 .ecran {
   position: absolute;
   left: -45%;
@@ -204,11 +215,11 @@ section {
 }
 
 .antenne {
-  position: absolute;
-  left: 45%;
-  top: 0%;
-  width: 87px;
-  height: 201px;
+    position: absolute;
+    margin-left: 650px;
+    margin-top: -70px;
+    width: 150px;
+    height: 350px;
   z-index: -100;
 }
 
@@ -313,6 +324,18 @@ section {
       transform: translate(1px, -2px) rotate(-2deg);
   }
 }
+
+#spin-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #393e46;
+    width: 350px;
+    height: 200px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 
 .controlSize {
   width: 40px;
