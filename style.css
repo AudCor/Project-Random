@@ -389,7 +389,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: column;
     width: 350px;
     height: 200px;
     border-bottom-left-radius: 5px;
