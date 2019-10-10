@@ -120,6 +120,9 @@ btn2.addEventListener("click", () => {
     startStyleInputs();
     boutonPLus.disabled = false;
     boutonMoins.disabled = false;
+    if (realInput.length <= 2){
+      boutonMoins.disabled = true;
+    }   
 });
 //lutilisateur peut tourner la roue des 2 sens
 var doc = window.document,
