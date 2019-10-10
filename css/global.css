@@ -79,7 +79,7 @@ body {
 /* Fin Tablet */
 
 
-/* tablet */
+/* smartphone */
 @media screen and (max-width: 576px) {
     body {
         background-image: url('../images/Background1.jpg') ;
