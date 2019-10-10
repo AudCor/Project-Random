@@ -122,6 +122,12 @@
   transform: translateX(100%);
 }
 
+/* bouton reset Listes enregistrées */
+#clearLists{
+  background-color: #FF4136;
+  color: #eeeeee;
+}
+
 }
 /* Fin Desktop */
 
@@ -245,6 +251,12 @@
 .slider-closing {
   transition: transform 0.2s ease-out;
   transform: translateX(430px);
+}
+
+/* bouton reset Listes enregistrées */
+#clearLists{
+  background-color: #FF4136;
+  color: #eeeeee;
 }
 
 }

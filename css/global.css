@@ -33,6 +33,28 @@ rouge               #e23e57
     font-family: 'bolton';
 }
 
+.dark-bg {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+    height: 92.7vh;
+    width: 100%;
+}
+
+.dark-bg-active {
+    display: block;
+}
+
+#controlsButtons {
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 769px) {
