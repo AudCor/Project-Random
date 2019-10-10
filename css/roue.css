@@ -198,6 +198,17 @@
 
 /* Smartphone */
 @media screen and (max-width: 576px) {
+    .bloc-roue {
+        width: 97vw;
+        height: 90vh;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        background-color: green;
+        border: solid 5px red;
+        top: 45px;
+    }
+ 
     #spin-div {
         position: absolute;
         width: 400px;

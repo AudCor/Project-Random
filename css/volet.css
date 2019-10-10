@@ -137,32 +137,62 @@
 
 /* Smartphone */
 @media screen and (max-width: 576px) {
+.zone-slider {
+    width: 97vw;
+    height: 90vh;
+    position: absolute;
+    right: 0px;
+    top: 45px;
+    display: flex;
+    justify-content: center;
+  }
+  .zone-slider button {
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .zone-slider li {
+    list-style: none;
+  }
+
   .profile-slider {
     background-image: url('../images/CADRE5.png');
     background-repeat: no-repeat;
+    background-size: 100%;
     z-index: 110;
     position: absolute;
-    right: 30px;
-    top: 60px;
-    height: 92.7vh;
-    width: 470px;
+    top: 50px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    height:100%;
     transform: translateX(100%);
     transition: transform 0.2s ease-in;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
   }
   
   .slider-contenu {
     margin-left: 10px;
-  
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 360px;
-    height: 500px;
+    width: 70%;
+    height: 60%;
+  }
+
+  .slider-active {
+    transition: 0.2s;
+    transform: translateX(0%);
+  }
+  
+  .slider-closing {
+    transition: transform 0.2s ease-out;
+    transform: translateX(92%);
   }
   
   #usernameMessage {
@@ -170,15 +200,23 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 300px;
-    height: 20%;
+    width: 100%;
+    height: 90px;
     background-color: rgba(241, 206, 168, 0.4);
     border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   
+  .newAcceuil {
+    justify-items: space-around;
+    align-content: space-around;
+    width: 80%;
+    height: 70%;
+  }
   
   #logoProfil {
-    width: 6em;
+    width: 5em;
     margin-top: -10%;
   }
   
@@ -199,15 +237,10 @@
   }
   
   #btnAjouter {
-    width: 40px;
+    width: 32px;
+    height: 32px;
   }
-  
-  .newAcceuil {
-    display: none;
-    justify-content: space-around;
-    width: 50%;
-  }
-  
+   
   #formNewNameList {
     display: none;
   }
@@ -247,16 +280,7 @@
     transition: 0.3s;
   }
   
-  .slider-active {
-    transition: 0.2s;
-    transform: translateX(7%);
-  }
-  
-  .slider-closing {
-    transition: transform 0.2s ease-out;
-    transform: translateX(100%);
-  }
-  
+
   /* bouton reset Listes enregistrées */
   #clearLists{
     background-color: #FF4136;
