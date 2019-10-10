@@ -50,6 +50,23 @@
 
 /* Smartphone */
 @media screen and (max-width: 576px) {
-
+  #listContainer {
+    display: block;
+    position: relative;
+    width: 70vw;
+    border: rgb(55, 34, 23) 4px solid;
+    background-color: #D0D0DC;
+    margin: auto;
+    top: -25vw;
+    border-radius: 10px;
+  }
+  
+  #listContainer ul {
+    list-style: none;
+    font-size: 7vw;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+  }
 }
 /* Fin Smartphone */

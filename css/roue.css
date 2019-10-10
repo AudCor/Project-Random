@@ -214,7 +214,7 @@
 
     .ecran {
         position: absolute;
-        top: 0%;
+        top: 0vw;
         left: -27%;
         margin-left: auto;
         margin-right: auto;
@@ -225,7 +225,7 @@
 
     .antenne {
         position: absolute;
-        top: -10%;
+        top: -20vw;
         left: 40%;
         width: 20%;
         z-index: -100;
@@ -233,7 +233,7 @@
 
     section {
         position: relative;
-        top: 0%;
+        top: 0vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -254,12 +254,12 @@
 
     .Loop {
         position: absolute;
-        top: 19%;
-        left: 16%;
+        top: 32vw;
+        left: 14.5%;
         margin-left: auto;
         margin-right: auto;
-        height: 40%;
-        width: 70%;
+        height: 50vw;
+        width: 67vw;
         overflow-y: auto;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
@@ -364,31 +364,34 @@
     #turn-button {
         background-color: #A6925F;
         position: absolute;
-        top: 55%;
+        top: 83vw;
         left: 60%;
-        width: 20%;
-        height: 9%;
+        width: 20vw;
+        height: 15vw;
         border: solid 4px rgb(55, 34, 23);
         border-radius: 8px;
         cursor: pointer;
         color: rgba(0, 0, 0, 0.856);
         font-size: 1.5em;
         z-index: 95;
-        background: linear-gradient(135deg, #b4e391 0%,#61c419 39%,#61c419 99%);
+        background-image: url("../images/icons/icons8-dice-96.png"), linear-gradient(135deg, #b4e391 0%,#61c419 39%,#61c419 99%);
+        background-repeat: no-repeat;
+        background-size: 13vw, 100%;
+        background-position: center;
     }
 
     #reset-button {
         position: absolute;
-        top: 55%;
+        top: 83vw;
         left: 26%;
         text-align: center;
         background-color: rgb(212, 21, 21);
         background-image: url("../images/icons/icons8-reset-96.png");
         background-repeat: no-repeat;
-        background-size: 32px;
+        background-size: 10vw;
         background-position: center;
-        width: 7vh;
-        height: 7vh;
+        width: 13vw;
+        height: 13vw;
         font-family: 'Courier New', Courier, monospace;
         color: rgba(0, 0, 0, 0);
         font-size: 24px;
@@ -401,19 +404,20 @@
     }
 
     #controlsButtons {
-        height: 110px;
+        height: 25vw;
+        width: 15vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        position: relative;
-        left: -39%;
-        top: 26%;
+        position: absolute;
+        left: 2%;
+        top: 43vw;
     }
 
     #controlPlus, #controlMoins {
         border-radius: 50%;
         border: solid 4px hsl(26, 40%, 43%);
-        font-size: 26px;
+        font-size: 7vw;
         font-weight: bold;
         z-index: 95;
         background-color: #e1e1e1;
@@ -421,19 +425,16 @@
     }
     #controlPlus {
         position: relative;
-        left: 43%;
-        width: 7vh;
-        height: 7vh;
+        left: 25%;
+        width: 11vw;
+        height: 11vw;
     }
     #controlMoins {
         position: relative;
-        left: 46%;
-        width: 6vh;
-        height: 6vh;
-
+        left: 36%;
+        width: 9vw;
+        height: 9vw;
     }
-
-
 
 }
  
