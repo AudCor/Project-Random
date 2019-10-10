@@ -3,7 +3,7 @@
 @media screen and (min-width: 769px) {
 
 .profile-slider {
-  background-image: url('/images/CADRE5.png');
+  background-image: url('../images/CADRE5.png');
   background-repeat: no-repeat;
   z-index: 110;
   position: absolute;
