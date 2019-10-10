@@ -20,7 +20,6 @@ function autoScroll(){
    
 };
 
-
 const btn = document.getElementById("turn-button");
 var contient = document.getElementById("spin-div");
 
