@@ -91,7 +91,7 @@ nav ul li button:hover {
 /*------ Sliders ----------*/
 
 .profile-slider {
-    background-image: url('/images/CADRE5.png');
+    background-image: url('images/CADRE5.png');
     background-repeat: no-repeat;
     z-index: 110;
     position: absolute;
