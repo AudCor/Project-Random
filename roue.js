@@ -120,6 +120,9 @@ btn2.addEventListener("click", () => {
     startStyleInputs();
     boutonPLus.disabled = false;
     boutonMoins.disabled = false;
+    if (realInput.length <= 2){
+      boutonMoins.disabled = true;
+    }   
 });
 //lutilisateur peut tourner la roue des 2 sens
 var doc = window.document,
@@ -489,7 +492,6 @@ function createLiList(i) {
     btnList.addEventListener('click',()=>{
       UpdateWheel(arrayCorrespondant);
       console.log(arrayCorrespondant);
-      bgDarkAway();
       reinitialiser();
       if (realInput.length <= 2){
         boutonMoins.disabled = true;
@@ -553,7 +555,6 @@ function updateList() {
       element.addEventListener('click', ()=>{
         var arrayist = Object.values(JSON.parse(localStorage.getItem(localStorage.key(index))))[0];
         UpdateWheel(arrayist); 
-        bgDarkAway();
         reinitialiser();
         if (realInput.length <= 2){
           boutonMoins.disabled = true;
