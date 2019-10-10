@@ -97,7 +97,7 @@ nav ul li button:hover {
     position: absolute;
     right: 30px;
     top: 15%;
-    height: 92.7vh;
+    height: 630px;
     width: 470px;
     transform: translateX(100%);
     transition: transform 0.2s ease-in;
@@ -207,6 +207,10 @@ nav ul li button:hover {
     transition: 0.3s;
 }
 
+.boutonsListes {
+
+}
+
 .slider-active {
     transition: 0.2s;
     transform: translateX(7%);
@@ -237,6 +241,7 @@ nav ul li button:hover {
 
 
 #listContainer {
+    display: none;
     width: 250px;
     height: 600px;
     border: black 5px solid;
@@ -305,7 +310,7 @@ section {
 .yellow,
 .orange {
     background-color: #F1CEA8;
-    background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+    background-image: url("images/broken-noise.png");
 
 }
 
@@ -313,7 +318,7 @@ section {
 .grey,
 .blue {
     background-color: #D0D0DC;
-    background-image: url("https://transparenttextures.com/patterns/black-felt.png");
+    background-image: url("images/broken-noise.png");
 }
 
 .inputWheel,
@@ -326,7 +331,9 @@ section {
     text-align: center;
     height: 4.2rem;
     width: 20rem;
+    border-radius: 10px;
     border: solid black;
+    background-color: #2228314b;
 
 }
 
@@ -392,15 +399,6 @@ section {
 }
 
 
-#spin-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 350px;
-    height: 200px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
 
 .controlSize {
     width: 40px;
@@ -408,28 +406,72 @@ section {
 }
 
 #turn-button {
-    width: 250px;
-    height: 50px;
+    position: absolute;
+    top: 25%;
+    right: -18.5%;
+    width: 62px;
+    height: 76px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.856);
+    font-size: 1.5em;
+    z-index: 95;
+    background: linear-gradient(135deg, #b4e391 0%,#61c419 39%,#61c419 99%);
 }
 
-#turn-button {
-    background-color: #A6925F;
-    color: white;
-    font-size: 1.5em;
+#turn-button:disabled {
+    background: linear-gradient(135deg, #b5bdc8 0%,#828c95 36%,#28343b 100%);
 }
+
 
 #reset-button {
-    background-color: red;
-    width: 30px;
-    height: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 1px;
+    background-color: rgb(212, 21, 21);
+    width: 35px;
+    height: 35px;
     color: black;
     font-size: 24px;
     cursor: pointer;
     border-radius: 50%;
     font-weight: bold;
+    z-index: 95;
+    top: 61%;
+    left: -15%;
+    animation: blink 1.5s infinite;
+}
+
+#controlPlus, #controlMoins {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 26px;
+    font-weight: bold;
+    z-index: 95;
+    background-color: #22283100;
+    border: none;
+    cursor: pointer;
+}
+
+#controlPlus {
+    top: 27%;
+    left: -15%;
+}
+
+#controlMoins {
+    top: 44%;
+    left: -15%;
+}
+
+@keyframes blink {
+    0% {
+        background-color: rgb(219, 54, 54);
+    }
 }
 
 /* pour le formulaire */
@@ -478,9 +520,18 @@ select {
 
 /* Compteur */
 #compteur{
-    width: 200px;
-    height: 100px;
-    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    top: -14%;
+    left: -53%;
+    position: absolute;
+    background: radial-gradient(ellipse at center, #b4ddb4 0%,#83c783 6%,#008a00 39%,#005700 77%,#002400 100%);
+    color: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+    width: 65px;
+    height: 40px;
+    z-index: 110;
 }
 /* bouton reset Listes enregistrées */
 #clearLists{

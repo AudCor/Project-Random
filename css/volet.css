@@ -14,22 +14,30 @@
 }
 
 .profile-slider {
-  background-image: url('../images/CADRE5.png');
-  background-size: contain;
+  background-image: url('/images/CADRE5.png');
   background-repeat: no-repeat;
-  z-index: 100;
-  height: 100%;
-}
-
-.slider-contenu {
-  width: 80%;
-  height : 70%;
+  z-index: 110;
+  position: absolute;
+  right: 30px;
+  top: 15%;
+  height: 92.7vh;
+  width: 470px;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  
+}
+
+.slider-contenu {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 360px;
+  height: 500px;
 }
 
 #usernameMessage {
@@ -65,12 +73,12 @@
 }
 
 #accroche {
-  font-size: 1.1em;
+  font-size: 1.5em;
   text-align: center;
 }
 
 .label {
-  font-size: 1em;
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -100,8 +108,12 @@
 
 #saveListbtn {
   margin-top: 5px;
-  font-size: 1.1em;
+  font-size: 2.5em;
   padding: 5px;
+}
+
+#newNameListBtn {
+  font-size: 1.5em;
 }
 
 .newParticipants {
@@ -109,7 +121,7 @@
 }
 
 #labelParticipant {
-  font-size: 0.8em;
+  font-size: 1.5em;
 }
 
 .slider-active {
