@@ -70,17 +70,19 @@ var choixFinal = null;
 var doNotAdd = false;
 // bouton demarrez
 btn.addEventListener("click", () =>{
+  console.log("click")
   for (let index = 0; index < realInput.length; index++) {
     const element = realInput[index];
-    if (element.value === "" || element.value == null) {
-      return alert("un input est vide")
+    if (element.value === "" || element.value === null) {
+      alert("un input est vide")
+      return
     }
   }
   demarrageRoue2();
   addNameOnArray();
   random3();
   btn.disabled = true;
-  griseInputs(); 
+  griseInputs();
 });
 
 //bouton reinitialiser
@@ -88,8 +90,7 @@ const btn2 = document.getElementById("reset-button");
 function stopAnimation() {
     doNotTurn = true;
     cancelAnimationFrame(animation);
-    scrollDistancePerSecond = 2000; //on remet la vitesse de depart
-    btn.addEventListener("click",demarrageRoue2); //on remet la fonction demarrageRoue sur le bouton Demarrez    
+    scrollDistancePerSecond = 2000; //on remet la vitesse de depart  
 }
 
 function reinitialiser() {
@@ -416,6 +417,7 @@ function controlUl() {
   }
   else{
     btnAjouter.disabled = false;
+    btnAddParticipant.disabled = false;
   }
 }
 //affichage input NewnameList
@@ -610,6 +612,7 @@ const btnClearLists = doc.getElementById('clearLists');
 btnClearLists.addEventListener('click',()=>{
   ulLists.innerHTML = "";
   localStorage.clear();
+  controlUl();
 })
 
 
