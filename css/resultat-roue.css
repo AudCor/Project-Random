@@ -1,0 +1,42 @@
+/* Desktop */
+
+@media screen and (min-width: 769px) {
+#listContainer {
+  width: 250px;
+  height: 600px;
+  border: black 5px solid;
+  background-color: #D0D0DC;
+  right: 100px;
+  top: 150px;
+  border-radius: 10px;
+}
+
+#listContainer ul {
+  list-style: none;
+  font-size: 40px;
+}
+}
+/* Fin Desktop */
+
+/* -------------------------------------------------------------------------- */
+
+/* tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+#listContainer {
+  width: 250px;
+  height: 600px;
+  border: black 5px solid;
+  background-color: #D0D0DC;
+  right: 100px;
+  top: 150px;
+  border-radius: 10px;
+}
+
+#listContainer ul {
+  list-style: none;
+  font-size: 40px;
+}
+
+}
+/* Fin Tablet */
