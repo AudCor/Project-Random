@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/volet.css">
+    <!-- <link rel="stylesheet" href="css/volet.css">
     <link rel="stylesheet" href="css/compteur.css">
     <link rel="stylesheet" href="css/resultat-roue.css">
     <link rel="stylesheet" href="css/roue.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/formulaire.css">
-    <title>Project Random</title>
+    <link rel="stylesheet" href="css/formulaire.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <title>Randomator</title>
 </head>
 
 <body>
@@ -26,7 +27,6 @@
             </ul>
         </nav>
         <div class="dark-bg" onclick="bgDarkAway()"></div>
-
         <div class="profile-slider slider-closing">
 
             <div class="slider-contenu">
@@ -39,19 +39,17 @@
                     <input id="userName" type="text">
                     <button id="btnAcceuil">Submit</button>
                 </div>
-                <div class="newAcceuil">
+                <div class="newAcceuil groupAcceuil">
                     <h3>Bienvenue</h3>
-                </div>
-                <div class="newAcceuil">
                     <h2 id="userNameH2"></h2>
                 </div>
-                <div class="newAcceuil">
+                <div class="newAcceuil groupAcceuil">
                     <p>Vos listes</p>
                     <ul id="ulLists">
 
                     </ul>
                 </div>
-                <div class="newAcceuil">
+                <div class="newAcceuil groupAcceuil">
                     <p>Ajouter une liste</p>
                     <button id="btnAjouter">+</button>
                 </div>
@@ -77,17 +75,19 @@
                 <div class="newParticipants">
                     <button id="saveListbtn" disabled>Enregistrez votre liste</button>
                 </div>
+                <div class="newAcceuil">
+                    <button id="clearLists">Supprimez vos listes !!</button>
+                </div>
             </div>
-
         </div>
     </header>
 
     <!-- Site et Fonctionnalités-->
     <main>
         <img class="antenne" src="images/steampunk_ecran_antenne.png" alt="">
-        
+
         <div class="container" id="spin-div">
-                <img class="ecran" src="images/steampunk_ecran_ecran.png" alt="">
+            <img class="ecran" src="images/steampunk_ecran_ecran.png" alt="">
             <div id="contentwrapper" class="Loop js-loop">
                 <section id="choice0" class="green">
                     <input id="input0" class="inputWheel inputWheelTotal" type="text" placeholder="Input here" minlength="1" maxlength="12">
@@ -134,22 +134,22 @@
 
             <div id="spin-buttons">
                 <button id="turn-button">Tourner la roue !</button>
-                <button id="reset-button">Réinitialiser</button>
+                <div id="reset-button" title="ce bouton réinitialisera la roue"></div>
             </div>
         </div>
         <div id="controlsButtons">
-                <button id="controlPlus" class="controlSize">+</button>
-                <button id="controlMoins" class="controlSize">-</button>
-            </div>
-      
-              <div id="compteur">
-                  <h2 id="compteurH2"></h2>
-              </div>
-      
-            <div id="listContainer">
-                <ul id="winnersList">
-                </ul>
-            </div>
+            <button id="controlPlus" class="controlSize">+</button>
+            <button id="controlMoins" class="controlSize">-</button>
+        </div>
+
+        <div id="compteur">
+            <h2 id="compteurH2"></h2>
+        </div>
+
+        <div id="listContainer">
+            <ul id="winnersList">
+            </ul>
+        </div>
     </main>
     <!-- Footer de la page -->
     <footer>
